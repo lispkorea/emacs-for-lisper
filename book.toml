@@ -8,3 +8,6 @@ src = "src"
 
 [output.html]
 no-section-label = true
+git-repository-url = "https://github.com/lispkorea/emacs-for-lisper"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/lispkorea/emacs-for-lisper/edit/main/{path}"
