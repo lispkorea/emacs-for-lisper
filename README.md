@@ -6,7 +6,9 @@
 
 - [소스](https://github.com/rust-lang/mdBook)
 - [메뉴얼](https://rust-lang.github.io/mdBook/)
-https://github.com/badboy/mdbook-toc
+- 기타
+  - [badboy/mdbook-toc](https://github.com/badboy/mdbook-toc)
+
 ``` zsh
 $ mdbook serve
 ```
