@@ -1,0 +1,10 @@
+[book]
+title = "리스퍼를 위한 이맥스"
+description = "이맥스 사용법 - 리스프 특화"
+authors = ["netpyoung"]
+language = "kr"
+multilingual = false
+src = "src"
+
+[output.html]
+no-section-label = true
