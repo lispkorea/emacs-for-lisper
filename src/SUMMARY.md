@@ -8,8 +8,8 @@
 
 - [설치](emacs/install.md)
 - [기본 조작법](emacs/basic.md)
-- [패키지 매니져](emacs/packagemanager.md)
 - [init.el](emacs/init.el.md)
+- [패키지 매니져](emacs/packagemanager.md)
 
 # ==패키지
 
