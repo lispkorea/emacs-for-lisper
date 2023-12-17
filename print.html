@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/package/Package.html">패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -407,6 +407,51 @@ brew install --cask emacs
 <li><a href="https://www.gnu.org/software/emacs/manual/">emacs(영문): 메뉴얼</a></li>
 <li><a href="https://www.gnu.org/software/emacs/tour/">emacs(영문): 투어</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="elisp"><a class="header" href="#elisp">elisp</a></h1>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/elisp.html">메뉴얼</a></li>
+</ul>
+<h2 id="ielm"><a class="header" href="#ielm">ielm</a></h2>
+<p>IELM(<code>I</code>nteractive <code>E</code>macs <code>L</code>isp <code>M</code>ode)</p>
+<div class="table-wrapper"><table><thead><tr><th>기능</th><th>단축키</th></tr></thead><tbody>
+<tr><td>구동</td><td>M-x ielm</td></tr>
+<tr><td>도움말</td><td>C-h m</td></tr>
+</tbody></table>
+</div>
+<h2 id="설정"><a class="header" href="#설정">설정</a></h2>
+<pre><code class="language-lisp">(progn ; `설정::한글'
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html
+  (set-language-environment &quot;Korean&quot;))
+</code></pre>
+<pre><code class="language-lisp">(progn ; `설정::utf-8'
+  ;; utf-8 설정
+  ;; ref: https://www.masteringemacs.org/article/working-coding-systems-unicode-emacs
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/Default-Coding-Systems.html
+  (set-default-coding-systems 'utf-8))
+</code></pre>
+<p>예전에는 <code>file-name-coding-system</code>, <code>set-terminal-coding-system</code>, <code>set-keyboard-coding-system</code> 등등 했었은데 이제는 <code>set-default-coding-systems</code> 하나로 끝낸다.</p>
+<pre><code class="language-lisp">(progn ; `설정::Y_혹은_N으로_대답'
+  (setq read-answer-short t)
+  (setq use-short-answers t))
+</code></pre>
+<p>예전에는 <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Yes_002dor_002dNo-Queries.html">(defalias 'yes-or-no-p 'y-or-n-p)</a> 이런식으로 했었다</p>
+<h2 id="맥-전용-옵션"><a class="header" href="#맥-전용-옵션">맥 전용 옵션</a></h2>
+<pre><code class="language-lisp">(progn ; `설정::macOs'
+  ;; ref: https://qiita.com/takashihattori/items/9ebc57bb5a68f0c87e35
+  (when (equal window-system 'mac)
+    (setq mac-function-modifier 'meta)
+    (setq mac-option-modifier 'meta)
+    (setq mac-command-modifier 'super)
+    ;; (global-set-key (kbd &quot;s-x&quot;) 'kill-region)
+    ;; (global-set-key (kbd &quot;s-c&quot;) 'kill-ring-save)
+    ;; (global-set-key (kbd &quot;s-v&quot;) 'yank)
+    ;; (global-set-key (kbd &quot;s-a&quot;) 'mark-whole-buffer)
+    ;; (global-set-key (kbd &quot;s-s&quot;) 'save-buffer)
+    ;; (global-set-key (kbd &quot;s-z&quot;) 'undo)
+    ;; (global-set-key (kbd &quot;s-+&quot;) 'text-scale-adjust)
+    ;; (global-set-key (kbd &quot;s--&quot;) 'text-scale-adjust)
+    ))
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="initel"><a class="header" href="#initel">init.el</a></h1>
 <p>Emacs가 시작될 때, 초기화 파일을 로드합니다. 초기화 파일은 <code>~/.emacs.el</code>, <code>~/.emacs</code>, <code>~/.emacs.d/init.el</code> 중 하나를 사용합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>파일명</th></tr></thead><tbody>
@@ -435,9 +480,8 @@ emacs --no-init-file --load ~/other/init.el
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="패키지-매니져"><a class="header" href="#패키지-매니져">패키지 매니져</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="패키지"><a class="header" href="#패키지">패키지</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="다양한-패키지"><a class="header" href="#다양한-패키지">다양한 패키지</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="색상-테마"><a class="header" href="#색상-테마">색상 테마</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="elisp-설정"><a class="header" href="#elisp-설정">elisp 설정</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="common-lisp-설정"><a class="header" href="#common-lisp-설정">Common Lisp 설정</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="slime"><a class="header" href="#slime">Slime</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sly"><a class="header" href="#sly">Sly</a></h1>
