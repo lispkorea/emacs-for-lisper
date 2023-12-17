@@ -9,17 +9,18 @@
 - [Emacs 설치](emacs/install.md)
 - [버전](emacs/version.md)
 - [기본 조작법](emacs/basic.md)
-- [init.el](emacs/init.el.md)
-- [패키지 매니져](emacs/packagemanager.md)
-
-# ==패키지
-
-- [패키지](emacs/package/Package.md)
-- [색상 테마](emacs/package/theme.md)
 
 # ==Elisp
 
 - [elisp 설정](emacs/elisp.md)
+- [init.el](emacs/init.el.md)
+
+# ==패키지
+
+- [패키지 매니져](emacs/packagemanager.md)
+- [다양한 패키지](emacs/package/Package.md)
+- [색상 테마](emacs/package/theme.md)
+
 
 # ==Common Lisp
 
