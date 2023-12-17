@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Emacs 설치 - 리스퍼를 위한 이맥스</title>
+        <title>버전 - 리스퍼를 위한 이맥스</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html" class="active">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html" class="active">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -149,7 +149,7 @@
                         <a href="https://github.com/lispkorea/emacs-for-lisper" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/install.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/version.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -178,95 +178,24 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="emacs-설치"><a class="header" href="#emacs-설치">Emacs 설치</a></h1>
-<h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
+                        <h1 id="버전"><a class="header" href="#버전">버전</a></h1>
 <ul>
-<li><a href="https://scoop.sh/">scoop</a></li>
+<li><a href="https://www.gnu.org/software/emacs/history.html">GNU Emacs Release History</a></li>
 </ul>
-<pre><code class="language-powershell"># scoop 설치
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-
-## git과 emacs 설치
-scoop bucket add extras
-scoop update
-scoop install git
-scoop install emacs
-
-# 기타 유틸들
-scoop install ag direnv fzf global openssh ripgrep gow fd gpg
-</code></pre>
-<ul>
-<li>기타
-<ul>
-<li><a href="https://tortoisegit.org">TortoiseGit</a></li>
-<li><a href="https://gitforwindows.org/">Git For Windows</a></li>
-<li><a href="https://www.rapidee.com/en/about">Rapid Environment Editor</a></li>
-</ul>
-</li>
-<li>간혹 운영체제 호환성 문제로 인해 윈도우에서 WSL을 이용하여 우분투를 사용하는 경우가 있습니다.
-<ul>
-<li><a href="https://lispkorea.github.io/etc/wsl/">WSL을 사용하는 경우</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="linux"><a class="header" href="#linux">Linux</a></h2>
-<pre><code class="language-sh"># 기본적으로 git은 설치하자
-sudo apt-get install git
-
-# 기본 저장소의 emacs의 버전이 낮아 지워주자
-sudo apt autoremove --purge emacs
-
-# 최신 emacs빌드를 설치하기 위해 새로운 저장소를 추가해주고
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt update &amp;&amp; sudo apt upgrade
-
-# emacs를 설치하자
-sudo apt-get install emacs28
-
-# 아래 명령어는 추후 지울때 사용
-sudo apt autoremove --purge emacs28
-sudo add-apt-repository --remove ppa:kelleyk/emacs
-</code></pre>
-<pre><code class="language-sh"># ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
-
-sudo apt-get install language-pack-ko
-sudo apt-get install language-pack-ko-base
-sudo apt-get install localepurge
-
-# /etc/default/locale
-# /etc/environment
-# /etc/profile
-
-sudo echo &quot;ko_KR.EUC-KR EUC-KR&quot; &gt;&gt; /var/lib/locales/supported.d/ko
-sudo locale-gen --purge
-sudo dpkg-reconfigure locales
-sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/environment
-sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/profile
-</code></pre>
-<h2 id="macos"><a class="header" href="#macos">macOs</a></h2>
-<ul>
-<li><a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a></li>
-</ul>
-<pre><code class="language-sh"># homebrew 설치
-/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-
-# git 설치
-brew install git
-
-# emacs 설치
-brew install --cask emacs
-</code></pre>
-
+<div class="table-wrapper"><table><thead><tr><th>버전</th><th>날짜</th><th>주요 변경사항</th></tr></thead><tbody>
+<tr><td>24.1</td><td>2012-06-10</td><td>package.el(기본 탑재)</td></tr>
+<tr><td>27.1</td><td>2020-08-10</td><td>렉시컬 바인딩(기본 활성화)</td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../faq.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../emacs/install.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../emacs/version.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../emacs/basic.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -276,11 +205,11 @@ brew install --cask emacs
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../faq.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../emacs/install.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../emacs/version.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../emacs/basic.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

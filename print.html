@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">설치</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/package/Package.html">패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/package/Package.html">패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -200,7 +200,7 @@
 <li>아래 영상에서 <code>박성민</code>님은 <code>Emacs</code>를 이용하여 <code>Common Lisp</code>를 다루고 있습니다.</li>
 </ul>
 <iframe width="800" height="600" src="https://www.youtube.com/embed/PqwuIfl-G1w?si=7lpcc1FphHXuo_d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="자주-뭍는-질문"><a class="header" href="#자주-뭍는-질문">자주 뭍는 질문</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="설치"><a class="header" href="#설치">설치</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="emacs-설치"><a class="header" href="#emacs-설치">Emacs 설치</a></h1>
 <h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
 <ul>
 <li><a href="https://scoop.sh/">scoop</a></li>
@@ -250,6 +250,22 @@ sudo apt-get install emacs28
 sudo apt autoremove --purge emacs28
 sudo add-apt-repository --remove ppa:kelleyk/emacs
 </code></pre>
+<pre><code class="language-sh"># ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
+
+sudo apt-get install language-pack-ko
+sudo apt-get install language-pack-ko-base
+sudo apt-get install localepurge
+
+# /etc/default/locale
+# /etc/environment
+# /etc/profile
+
+sudo echo &quot;ko_KR.EUC-KR EUC-KR&quot; &gt;&gt; /var/lib/locales/supported.d/ko
+sudo locale-gen --purge
+sudo dpkg-reconfigure locales
+sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/environment
+sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/profile
+</code></pre>
 <h2 id="macos"><a class="header" href="#macos">macOs</a></h2>
 <ul>
 <li><a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a></li>
@@ -263,7 +279,134 @@ brew install git
 # emacs 설치
 brew install --cask emacs
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="버전"><a class="header" href="#버전">버전</a></h1>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/history.html">GNU Emacs Release History</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>버전</th><th>날짜</th><th>주요 변경사항</th></tr></thead><tbody>
+<tr><td>24.1</td><td>2012-06-10</td><td>package.el(기본 탑재)</td></tr>
+<tr><td>27.1</td><td>2020-08-10</td><td>렉시컬 바인딩(기본 활성화)</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
+<p><strong><code>Ctrl-G</code></strong> 중요합니다.</p>
+<div class="table-wrapper"><table><thead><tr><th>키</th><th>기호</th></tr></thead><tbody>
+<tr><td>Ctrl</td><td>C</td></tr>
+<tr><td>Alt/Option</td><td>M</td></tr>
+<tr><td>Shift</td><td>S</td></tr>
+</tbody></table>
+</div>
+<h2 id="필수-조작법"><a class="header" href="#필수-조작법">필수 조작법</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>필수</th><th>단축키</th></tr></thead><tbody>
+<tr><td><strong>중단</strong></td><td><code>C-g</code></td></tr>
+<tr><td>파일 열기</td><td>C-x C-f</td></tr>
+<tr><td>저장하기</td><td>C-x C-s</td></tr>
+<tr><td>종료</td><td>C-x C-c</td></tr>
+<tr><td>명령어 실행</td><td>M-x 명령어</td></tr>
+</tbody></table>
+</div>
+<h2 id="이동"><a class="header" href="#이동">이동</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>C-이동</th><th>단축키</th><th>M-이동</th><th>단축키</th></tr></thead><tbody>
+<tr><td>문자 앞(forward)</td><td>C-f</td><td>단어 앞(forward)</td><td>M-f</td></tr>
+<tr><td>문자 뒤(back)</td><td>C-b</td><td>단어 뒤(back)</td><td>M-b</td></tr>
+<tr><td>라인 위(previous-line)</td><td>C-p</td><td></td><td></td></tr>
+<tr><td>라인 아래(next-line)</td><td>C-n</td><td></td><td></td></tr>
+<tr><td>라인 앞</td><td>C-a</td><td>문단 앞</td><td>M-a</td></tr>
+<tr><td>라인 뒤</td><td>C-e</td><td>문단 뒤</td><td>M-e</td></tr>
+<tr><td></td><td></td><td>라인으로 이동</td><td>M-g M-g 라인</td></tr>
+</tbody></table>
+</div>
+<p><a href="emacs/../res/emacs-movement.png"><img src="emacs/../res/emacs-movement.png" alt="emacs-movement.png" /></a></p>
+<ul>
+<li><a href="https://punchcard.wordpress.com/2010/10/09/emacs-movement-shortcuts-wallpaper/">출처</a></li>
+</ul>
+<h2 id="튜토리얼-시작"><a class="header" href="#튜토리얼-시작">튜토리얼 시작</a></h2>
+<p>위에 필수과 이동을 잘 숙지 후,  <code>M-x help-with-tutorial-spec-language</code>후 <code>Korean</code>을 입력하시면 한글로 튜토리얼을 볼 수 있습니다.</p>
+<h2 id="기타"><a class="header" href="#기타">기타</a></h2>
+<h3 id="삭제"><a class="header" href="#삭제">삭제</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>이동</th><th>단축키</th><th>이동</th><th>단축키</th></tr></thead><tbody>
+<tr><td>C-k</td><td>현재 커서에서 라인 끝까지 삭제</td><td>M-k</td><td>버퍼 삭제</td></tr>
+<tr><td>이전 문자 지우기</td><td><code>&lt;Del&gt;</code></td><td>이전 단어 지우기</td><td>M-<code>&lt;Del&gt;</code></td></tr>
+<tr><td>다음 문자 지우기</td><td>C-d</td><td>다음 단어 지우기</td><td>M-d</td></tr>
+</tbody></table>
+</div>
+<h3 id="복사-붙여넣기-되돌리기"><a class="header" href="#복사-붙여넣기-되돌리기">복사, 붙여넣기, 되돌리기</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>복사, 붙여넣기, 되돌리기</th><th>단축키</th></tr></thead><tbody>
+<tr><td>마크 설정</td><td>C-<code>&lt;SPC&gt;</code></td></tr>
+<tr><td>마크 전체</td><td>C-x h</td></tr>
+<tr><td>마크된 영역 <code>복사</code></td><td>M-w</td></tr>
+<tr><td>마크된 영역 <code>잘라내기</code></td><td>C-w</td></tr>
+<tr><td><code>붙여넣기</code></td><td>C-y</td></tr>
+<tr><td><code>되돌리기</code></td><td>C-x u</td></tr>
+<tr><td><code>되돌리기</code></td><td>C-/</td></tr>
+</tbody></table>
+</div>
+<h3 id="확대축소"><a class="header" href="#확대축소">확대축소</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>확대축소</th><th>단축키</th><th></th></tr></thead><tbody>
+<tr><td>확대</td><td>C-x C-<code>-</code></td><td></td></tr>
+<tr><td>축소</td><td>C-x C-<code>=</code></td><td></td></tr>
+<tr><td>자동줄바꿈(껏다 켰다)</td><td>C-x x t</td><td>toggle-truncate-lines</td></tr>
+</tbody></table>
+</div>
+<h3 id="검색"><a class="header" href="#검색">검색</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>검색</th><th>단축키</th></tr></thead><tbody>
+<tr><td>정방향</td><td>C-s</td></tr>
+<tr><td>역방향</td><td>C-r</td></tr>
+<tr><td>정방향(정규표현식)</td><td>C-M-s</td></tr>
+<tr><td>역방향(정규표현식)</td><td>C-M-r</td></tr>
+<tr><td>바꾸기</td><td>M-%</td></tr>
+<tr><td>바꾸기(정규표현식)</td><td>C-M-%</td></tr>
+</tbody></table>
+</div>
+<h2 id="shell"><a class="header" href="#shell">shell</a></h2>
+<ul>
+<li><a href="https://unix.stackexchange.com/a/180129">https://unix.stackexchange.com/a/180129</a>
+<ul>
+<li>M-x shell
+<ul>
+<li>{grep, du, ls, sort, cat, head, tail, uname, ...}와 같은 클래식/표준 Unix 쉘 명령의 일반적인 사용에 적합합니다.</li>
+</ul>
+</li>
+<li>M-x term ＆ M-x ansi-term
+<ul>
+<li>ssh나 기타 명령줄 대화형 인터페이스(예: {python, ruby, lisp} 셸) 또는 {vim, synaptic, …}과 같은 텍스트 기반 GUI 앱을 실행하려는 경우에 좋습니다.</li>
+</ul>
+</li>
+<li>M-x eshell
+<ul>
+<li>eshell은 emacs lisp에 직접 액세스할 수 있기 때문에 bash가 설치되지 않은 Microsoft Windows에서 특히 좋습니다. 또는 emacs lisp 프로그래머라면 더욱 좋습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="버퍼-윈도우-프레임-탭"><a class="header" href="#버퍼-윈도우-프레임-탭">버퍼, 윈도우, 프레임, 탭</a></h2>
+<p><strong>버퍼</strong>와 <strong>윈도우</strong>를 자주 사용합니다.</p>
+<h3 id="버퍼"><a class="header" href="#버퍼">버퍼</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>버퍼</strong></th><th>단축키</th></tr></thead><tbody>
+<tr><td>목록</td><td>C-x C-b</td></tr>
+<tr><td>이동</td><td>C-x b</td></tr>
+<tr><td>삭제</td><td>C-x k</td></tr>
+<tr><td>읽기전용(토클)</td><td>C-x C-q</td></tr>
+</tbody></table>
+</div>
+<h3 id="윈도우"><a class="header" href="#윈도우">윈도우</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th><strong>윈도우</strong></th><th>프레임</th><th>탭</th></tr></thead><tbody>
+<tr><td>현재창 닫기</td><td>C-x 0</td><td>C-x 5 0</td><td>C-x t 0</td></tr>
+<tr><td>다른창 닫기</td><td>C-x 1</td><td>C-x 5 1</td><td>C-x t 1</td></tr>
+<tr><td>새로만들기</td><td>C-x 2</td><td>C-x 5 2</td><td>C-x t 2</td></tr>
+<tr><td>새로만들기(우측)</td><td>C-x 3</td><td></td><td></td></tr>
+<tr><td>다음으로 이동</td><td>C-x o</td><td>C-x 5 o</td><td>C-x t o</td></tr>
+<tr><td>파일 열기</td><td>C-x C-f</td><td>C-x 5 C-f</td><td>C-x t C-f</td></tr>
+<tr><td>파일 열기(읽기전용)</td><td>C-x C-r</td><td>C-x 5 r</td><td>C-x t C-r</td></tr>
+</tbody></table>
+</div>
+<h2 id="참고"><a class="header" href="#참고">참고</a></h2>
+<ul>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/tutorials/TUTORIAL.ko">TUTORIAL.ko</a></li>
+<li><a href="https://www.emacswiki.org/">emacs: wiki</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/">emacs(영문): 메뉴얼</a></li>
+<li><a href="https://www.gnu.org/software/emacs/tour/">emacs(영문): 투어</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="initel"><a class="header" href="#initel">init.el</a></h1>
 <p>Emacs가 시작될 때, 초기화 파일을 로드합니다. 초기화 파일은 <code>~/.emacs.el</code>, <code>~/.emacs</code>, <code>~/.emacs.d/init.el</code> 중 하나를 사용합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>파일명</th></tr></thead><tbody>
@@ -286,7 +429,7 @@ emacs --no-init-file --load ~/other/init.el
 <ul>
 <li><code>.emacs.d/init.el</code>을 시작위치로, <code>.emacs.d/</code> 폴더를 github등을 이용해 버전관리해주면 좋습니다.</li>
 </ul>
-<h2 id="참고"><a class="header" href="#참고">참고</a></h2>
+<h2 id="참고-1"><a class="header" href="#참고-1">참고</a></h2>
 <ul>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
