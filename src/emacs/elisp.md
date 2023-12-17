@@ -12,6 +12,17 @@ IELM(`I`nteractive `E`macs `L`isp `M`ode)
 | 구동   | M-x ielm |
 | 도움말 | C-h m    |
 
+## 컴파일
+
+- [바이트 컴파일](https://www.gnu.org/software/emacs/manual/html_node/eintr/Byte-Compiling.html)
+- [네이티브 컴파일](https://www.gnu.org/software/emacs/manual/html_node/elisp/Native_002dCompilation-Functions.html)
+
+| 확장자 | 설명            |
+| ------ | --------------- |
+| .el    | 텍스트          |
+| .elc   | 바이트 컴파일   |
+| .elf   | 네이티브 컴파일 |
+
 
 ## 설정
 
