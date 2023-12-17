@@ -1,4 +1,4 @@
-# 설치
+# Emacs 설치
 
 
 ## Windows

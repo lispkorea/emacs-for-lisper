@@ -4,7 +4,7 @@
 
 ## mdBook
 
-- [소스](https://github.com/rust-lang/mdBook)
+- [저장소](https://github.com/rust-lang/mdBook)
 - [메뉴얼](https://rust-lang.github.io/mdBook/)
 - 기타
   - [badboy/mdbook-toc](https://github.com/badboy/mdbook-toc)

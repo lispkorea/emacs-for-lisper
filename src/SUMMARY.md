@@ -6,7 +6,7 @@
 
 # ==Emacs
 
-- [설치](emacs/install.md)
+- [Emacs 설치](emacs/install.md)
 - [기본 조작법](emacs/basic.md)
 - [init.el](emacs/init.el.md)
 - [패키지 매니져](emacs/packagemanager.md)
