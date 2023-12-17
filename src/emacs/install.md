@@ -1,5 +1,11 @@
 # Emacs 설치
 
+emacs 컴파일 옵션이 여러가지가 있으며, 아래 명령어를 통해 확인할 수 있습니다.
+
+``` sh
+# ref: https://emacs.stackexchange.com/a/35512
+emacs -nw -q --batch --eval '(message system-configuration-options)'
+```
 
 ## Windows
 
@@ -21,32 +27,49 @@ scoop install ag direnv fzf global openssh ripgrep gow fd gpg
 ```
 
 - 기타
-  - [TortoiseGit](https://tortoisegit.org)
-  - [Git For Windows](https://gitforwindows.org/)
-  - [Rapid Environment Editor](https://www.rapidee.com/en/about)
+  - 깃
+    - [TortoiseGit](https://tortoisegit.org)
+    - [Git For Windows](https://gitforwindows.org/)
+  - 환경변수
+    - [Rapid Environment Editor](https://www.rapidee.com/en/about)
 - 간혹 운영체제 호환성 문제로 인해 윈도우에서 WSL을 이용하여 우분투를 사용하는 경우가 있습니다.
   - [WSL을 사용하는 경우](https://lispkorea.github.io/etc/wsl/)
 
 ## Linux
 
 ``` sh
+sudo apt update
+
 # 기본적으로 git은 설치하자
 sudo apt-get install git
-
-# 기본 저장소의 emacs의 버전이 낮아 지워주자
-sudo apt autoremove --purge emacs
-
-# 최신 emacs빌드를 설치하기 위해 새로운 저장소를 추가해주고
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt update && sudo apt upgrade
-
-# emacs를 설치하자
-sudo apt-get install emacs28
-
-# 아래 명령어는 추후 지울때 사용
-sudo apt autoremove --purge emacs28
-sudo add-apt-repository --remove ppa:kelleyk/emacs
 ```
+
+### 스냅 설정
+
+- [snap](https://snapcraft.io/)
+  - <https://snapcraft.io/emacs>
+
+``` sh
+sudo apt install snapd
+sudo snap install emacs --classic
+sudo snap remove
+```
+
+| [모드](https://snapcraft.io/docs/install-modes) | 설명                                                  |
+| ----------------------------------------------- | ----------------------------------------------------- |
+| --classic                                       | classic confinement for full system access            |
+| --dangerous                                     | dangerous mode for testing local unsigned snaps       |
+| --devmode                                       | developer mode for testing and viewing log output     |
+| --jailmode                                      | forces a snap to be installed with strict confinement |
+
+| [채널](https://snapcraft.io/docs/channels) | 설명                                                                                          |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| --beta                                     | for users wanting to test the latest features, typically outside of a production environment. |
+| --edge                                     | for users wanting to closely track development.                                               |
+
+
+
+### 한글 설정
 
 ``` sh
 # ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
@@ -68,7 +91,12 @@ sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/profile
 
 ## macOs
 
-- <https://emacsformacosx.com/>
+- brew
+  - <https://formulae.brew.sh/formula/emacs>
+    - `brew install emacs`
+  - <https://formulae.brew.sh/cask/emacs>
+    - <https://emacsformacosx.com/>
+      - `brew install --cask emacs`
 
 ``` sh
 # homebrew 설치
@@ -80,3 +108,42 @@ brew install git
 # emacs 설치
 brew install --cask emacs
 ```
+
+
+### 좀 더 옵션을 자유롭게 넣고 싶다
+
+- <https://github.com/d12frosted/homebrew-emacs-plus>
+  - `--with-native-comp` 옵션이 있는 homebrew-emacs-plus로 선택
+
+``` sh
+# homebrew 설치
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# git 설치
+brew install git
+
+# emacs 설치
+brew tap d12frosted/emacs-plus
+# for Just-In-Time Compilation
+# ref: https://gcc.gnu.org/wiki/JIT
+brew install libgccjit
+export CC=gcc
+brew install emacs-plus@29 --with-native-comp 
+# Emacs.app was installed to:
+#   /opt/homebrew/opt/emacs-plus@29
+#
+# To link the application to default Homebrew App location:
+#   ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
+#
+# Your PATH value was injected into Emacs.app/Contents/Info.plist
+#
+# Report any issues to http://github.com/d12frosted/homebrew-emacs-plus
+#
+# To start d12frosted/emacs-plus/emacs-plus@29 now and restart at login:
+#   brew services start d12frosted/emacs-plus/emacs-plus@29
+# Or, if you don't want/need a background service you can just run:
+#   /opt/homebrew/opt/emacs-plus@29/bin/emacs --fg-daemon
+
+ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
+```
+
