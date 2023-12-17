@@ -48,6 +48,24 @@ sudo apt autoremove --purge emacs28
 sudo add-apt-repository --remove ppa:kelleyk/emacs
 ```
 
+``` sh
+# ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
+
+sudo apt-get install language-pack-ko
+sudo apt-get install language-pack-ko-base
+sudo apt-get install localepurge
+
+# /etc/default/locale
+# /etc/environment
+# /etc/profile
+
+sudo echo "ko_KR.EUC-KR EUC-KR" >> /var/lib/locales/supported.d/ko
+sudo locale-gen --purge
+sudo dpkg-reconfigure locales
+sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/environment
+sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/profile
+```
+
 ## macOs
 
 - <https://emacsformacosx.com/>
