@@ -37,6 +37,9 @@
 - [Clojure 설정](clojure/Clojure.md)
 - [cider](clojure/cider.md)
 
+# ==Etc
+
+- [읽어볼거리](etc/reading.md)
 
 -----------
 
