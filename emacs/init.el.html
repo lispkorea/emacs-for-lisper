@@ -186,12 +186,20 @@
 <tr><td>~/.emacs.d/init.el</td></tr>
 </tbody></table>
 </div>
+<ul>
+<li>변수 <code>user-emacs-directory</code>는 초기화 파일이 있는 폴더 명시합니다.
+<ul>
+<li>ex) &quot;~/.emacs.d/&quot;</li>
+</ul>
+</li>
+</ul>
 <p>Emacs는 다음과 같은 시작 옵션을 제공합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>emacs 옵션</th><th>설명</th></tr></thead><tbody>
 <tr><td>--no-init-file / -q</td><td>기본 초기화 파일을 로드하지 않음</td></tr>
 <tr><td>--debug-init</td><td>초기화 파일에 디버거를 활성화 시킴</td></tr>
 <tr><td>--load 파일위치 / -l 파일위치</td><td>특정 파일을 로드함</td></tr>
 <tr><td>--no-window-system / -nw</td><td>GUI를 사용하지 않음</td></tr>
+<tr><td>--init-directory=폴더</td><td>init 폴더를 지정한 곳으로 설정가능</td></tr>
 </tbody></table>
 </div>
 <pre><code class="language-bash"># 예를들어 다른 위치에 있는 init.el을 로드하고 싶다면
@@ -199,6 +207,12 @@ emacs --no-init-file --load ~/other/init.el
 </code></pre>
 <ul>
 <li><code>.emacs.d/init.el</code>을 시작위치로, <code>.emacs.d/</code> 폴더를 github등을 이용해 버전관리해주면 좋습니다.</li>
+<li><code>.org</code>파일로 <code>.el</code>를 생성할 수 있는 점을 이용. 문서화와 코드를 동시에 관리하는 방법도 있습니다.
+<ul>
+<li>다만, 설정파일을 org로 다루는 것은 호불호가 갈리고, 무엇보다도 org를 다루기에는 너무나 방대합니다.</li>
+<li>따라서, <strong>여기서 Org는 다루지 않겠습니다</strong>.</li>
+</ul>
+</li>
 </ul>
 <h2 id="참고"><a class="header" href="#참고">참고</a></h2>
 <ul>

@@ -181,9 +181,22 @@
                         <h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
 <p><strong><code>Ctrl-G</code></strong> 중요합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>키</th><th>기호</th></tr></thead><tbody>
-<tr><td>Ctrl</td><td>C</td></tr>
-<tr><td>Alt/Option</td><td>M</td></tr>
-<tr><td>Shift</td><td>S</td></tr>
+<tr><td>Ctrl</td><td>C-</td></tr>
+<tr><td>Meta</td><td>M-</td></tr>
+<tr><td>Super</td><td>S-</td></tr>
+<tr><td>Hyper</td><td>H-</td></tr>
+<tr><td>Enter</td><td>RET</td></tr>
+<tr><td>Space</td><td>SPC</td></tr>
+<tr><td>F1</td><td><f1></td></tr>
+<tr><td>상하좌우</td><td><up>/<down>/<left>/<right></td></tr>
+<tr><td>마우스</td><td><mouse-1></td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>ref: <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>설명</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>키 확인</td><td>C-h c</td><td>describe-key-briefly</td></tr>
 </tbody></table>
 </div>
 <h2 id="필수-조작법"><a class="header" href="#필수-조작법">필수 조작법</a></h2>
@@ -291,6 +304,46 @@
 <tr><td>파일 열기(읽기전용)</td><td>C-x C-r</td><td>C-x 5 r</td><td>C-x t C-r</td></tr>
 </tbody></table>
 </div>
+<h2 id="모드"><a class="header" href="#모드">모드</a></h2>
+<ul>
+<li>주(매이져, Major)모드와 보조(마이너, Minor)모드가 있습니다.
+<ul>
+<li><code>M-x describe-mode RET</code> 으로 확인 할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="키고-끄기"><a class="header" href="#키고-끄기">키고 끄기</a></h2>
+<p>모드를 키고 끄는건 <code>+1</code> 혹은 <code>-1</code>을 사용하도록 합니다.</p>
+<pre><code class="language-lisp">(display-time-mode +1) ; 시간 켜기
+(display-time-mode -1) ; 시간 끄기 (0포함 음수면 끄기)
+</code></pre>
+<h3 id="예"><a class="header" href="#예">예</a></h3>
+<ul>
+<li>elisp파일을 열고 <code>M-x prettify-symbols-mode RET</code>으로 한 다음,</li>
+<li><code>M-x describe-mode RET</code>를 입력하면 매이저/마이너 모드를 확인 할 수 있습니다.
+<ul>
+<li>매이저 ELisp/d는 elisp-mode.el 정의되어있고, </li>
+<li>마이너 모드는 Auto-Save, Eldoc, Font-Lock, 그리고 아까 활성화시킨 Prettify-Symbols 가 활성되어있습니다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-lisp">;; emacs-lisp-mode는 lisp-data-mode를
+;; lisp-data-mode는 prog-mode를
+;; prog-mode는 fundamental-mode를 상속받고 있습니다.
+
+;; emacs-lisp-mode
+;;   -|&gt; lisp-data-mode
+;;     -|&gt; prog-mode
+;;       -|&gt; fundamental-mode
+
+;; 그리고 lisp-data-mode는 다음 prettify-symbols-alist를 가지고 있다.
+;; alist란 association list(연관리스트)의 약자로, (key . value)의 리스트이다.
+(defconst lisp-prettify-symbols-alist '((&quot;lambda&quot;  . ?λ))
+  &quot;Alist of symbol/\&quot;pretty\&quot; characters to be displayed.&quot;)
+
+;; prettify-symbols-mode를 활성시켰으므로
+;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
+</code></pre>
 <h2 id="참고"><a class="header" href="#참고">참고</a></h2>
 <ul>
 <li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/tutorials/TUTORIAL.ko">TUTORIAL.ko</a></li>

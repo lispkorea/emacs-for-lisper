@@ -184,9 +184,13 @@
 </ul>
 <h2 id="ielm"><a class="header" href="#ielm">ielm</a></h2>
 <p>IELM(<code>I</code>nteractive <code>E</code>macs <code>L</code>isp <code>M</code>ode)</p>
-<div class="table-wrapper"><table><thead><tr><th>기능</th><th>단축키</th></tr></thead><tbody>
-<tr><td>구동</td><td>M-x ielm</td></tr>
-<tr><td>도움말</td><td>C-h m</td></tr>
+<p><code>M-x ielm RET</code></p>
+<h3 id="기타-유용한-함수"><a class="header" href="#기타-유용한-함수">기타 유용한 함수</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>기능</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>코드 평가</td><td>M-<code>:</code></td><td>eval-expression</td></tr>
+<tr><td>모드확인</td><td></td><td>describe-mode</td></tr>
+<tr><td>변수설명</td><td></td><td>describe-variable</td></tr>
+<tr><td>함수설명</td><td></td><td>describe-function</td></tr>
 </tbody></table>
 </div>
 <h2 id="컴파일"><a class="header" href="#컴파일">컴파일</a></h2>
@@ -200,6 +204,9 @@
 <tr><td>.elf</td><td>네이티브 컴파일</td></tr>
 </tbody></table>
 </div>
+<ul>
+<li>참조: <a href="https://www.grugrut.net/posts/202104272222/">https://www.grugrut.net/posts/202104272222/</a></li>
+</ul>
 <h2 id="설정"><a class="header" href="#설정">설정</a></h2>
 <pre><code class="language-lisp">(progn ; `설정::한글'
   ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html
@@ -219,20 +226,59 @@
 <p>예전에는 <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Yes_002dor_002dNo-Queries.html">(defalias 'yes-or-no-p 'y-or-n-p)</a> 이런식으로 했었다</p>
 <h2 id="맥-전용-옵션"><a class="header" href="#맥-전용-옵션">맥 전용 옵션</a></h2>
 <pre><code class="language-lisp">(progn ; `설정::macOs'
-  ;; ref: https://qiita.com/takashihattori/items/9ebc57bb5a68f0c87e35
-  (when (equal window-system 'mac)
-    (setq mac-function-modifier 'meta)
-    (setq mac-option-modifier 'meta)
-    (setq mac-command-modifier 'super)
-    ;; (global-set-key (kbd &quot;s-x&quot;) 'kill-region)
-    ;; (global-set-key (kbd &quot;s-c&quot;) 'kill-ring-save)
-    ;; (global-set-key (kbd &quot;s-v&quot;) 'yank)
-    ;; (global-set-key (kbd &quot;s-a&quot;) 'mark-whole-buffer)
-    ;; (global-set-key (kbd &quot;s-s&quot;) 'save-buffer)
-    ;; (global-set-key (kbd &quot;s-z&quot;) 'undo)
-    ;; (global-set-key (kbd &quot;s-+&quot;) 'text-scale-adjust)
-    ;; (global-set-key (kbd &quot;s--&quot;) 'text-scale-adjust)
+  ;;
+  ;; ns : NeXTSTEP. Darwin이전에 사용되던 OS
+  ;; darwin: Darwin (kernel)로 macOs의 기반이되는 코어.
+  ;; darwin/ns/mac 이라 치면 보통 macOs구나 라고 생각하면 편하다.
+  ;; mac-function-modifier =&gt; alias ns-function-modifier 
+  ;;
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mac-_002f-GNUstep-Customization.html
+  ;;
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |     |       |     |     |                   |     |     |
+  ;; |Fn   |Ctrl   |Optn |Cmd  |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |hyper|control|super|meta |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;;
+  (when (eq system-type 'darwin)
+    (setq ns-function-modifier 'hyper)
+    (setq ns-control-modifier 'control)
+    (setq ns-option-modifier 'super)
+    (setq ns-command-modifier 'meta)
+    ;; (global-set-key (kbd &quot;S-x&quot;) 'kill-region)
+    ;; (global-set-key (kbd &quot;S-c&quot;) 'kill-ring-save)
+    ;; (global-set-key (kbd &quot;S-v&quot;) 'yank)
+    ;; (global-set-key (kbd &quot;S-a&quot;) 'mark-whole-buffer)
+    ;; (global-set-key (kbd &quot;S-s&quot;) 'save-buffer)
+    ;; (global-set-key (kbd &quot;S-z&quot;) 'undo)
+    ;; (global-set-key (kbd &quot;S-+&quot;) 'text-scale-adjust)
+    ;; (global-set-key (kbd &quot;S--&quot;) 'text-scale-adjust)
     ))
+</code></pre>
+<h2 id="기타"><a class="header" href="#기타">기타</a></h2>
+<pre><code class="language-lisp">;; association list
+;; push를 사용하게 되면 같은 키가 여러개 생긴다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(push '(a . 1) x-alist)           ; ((a . 1) (a . 1))
+;; add-to-list를 사용하면 같은 키가 여러개 생기지 않는다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(add-to-list 'x-alist '(a . 1))   ; ((a . 1))
+(add-to-list 'x-alist '(a . 2))   ; ((a . 1) (a . 2)) ;; 의도하지 않은 결과가 나온다.
+;; ref: https://stackoverflow.com/a/25100962
+
+;; property list
+(defvar x-plist '(:a 1 :b 2))     ; (:a 1 :b 2)
+(plist-get x-plist :b)            ; 2
+
+
+;; 사전
+;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/Dictionaries.html
+;; memq
+&gt; (memq 9 '(1 2 3))
+nil
+&gt; (memq 2 '(1 2 3))
+(2 3)
 </code></pre>
 
                     </main>

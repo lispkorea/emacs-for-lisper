@@ -317,7 +317,11 @@ sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/profile
 # git 설치
 brew install git
 
-# emacs 설치
+# font 설치
+brew tap homebrew/cask-fonts
+brew install font-d2coding-nerd-font
+</code></pre>
+<pre><code class="language-sh"># emacs 설치
 brew install --cask emacs
 </code></pre>
 <h3 id="좀-더-옵션을-자유롭게-넣고-싶다"><a class="header" href="#좀-더-옵션을-자유롭게-넣고-싶다">좀 더 옵션을 자유롭게 넣고 싶다</a></h3>
@@ -328,13 +332,7 @@ brew install --cask emacs
 </ul>
 </li>
 </ul>
-<pre><code class="language-sh"># homebrew 설치
-/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-
-# git 설치
-brew install git
-
-# emacs 설치
+<pre><code class="language-sh"># emacs 설치
 brew tap d12frosted/emacs-plus
 # for Just-In-Time Compilation
 # ref: https://gcc.gnu.org/wiki/JIT
@@ -365,20 +363,39 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <div class="table-wrapper"><table><thead><tr><th>버전</th><th>날짜</th><th>주요 변경사항</th></tr></thead><tbody>
 <tr><td>24.1</td><td>2012-06-10</td><td></td></tr>
 <tr><td></td><td></td><td>package.el(기본 탑재)</td></tr>
+<tr><td>24.4</td><td>2014-10-20</td><td></td></tr>
+<tr><td></td><td></td><td>M-x prettify-symbols-mode</td></tr>
+<tr><td>26.1</td><td>2018-05-28</td><td></td></tr>
+<tr><td></td><td></td><td>M-x display-line-numbers-mode / (성능문제로 c언어로 작성)</td></tr>
 <tr><td>27.1</td><td>2020-08-10</td><td></td></tr>
 <tr><td></td><td></td><td>렉시컬 바인딩(기본 활성화)</td></tr>
-<tr><td>29.1</td><td></td><td></td></tr>
+<tr><td>29.1</td><td>2023-07-30</td><td></td></tr>
 <tr><td></td><td></td><td>Tree-sitter</td></tr>
 <tr><td></td><td></td><td>EGlot</td></tr>
 <tr><td></td><td></td><td>use-package</td></tr>
 <tr><td></td><td></td><td>--init-directory 옵션</td></tr>
+<tr><td></td><td></td><td>M-x restart-emacs</td></tr>
+<tr><td></td><td></td><td>linum-mode (elisp) =&gt; 사라짐</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
 <p><strong><code>Ctrl-G</code></strong> 중요합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>키</th><th>기호</th></tr></thead><tbody>
-<tr><td>Ctrl</td><td>C</td></tr>
-<tr><td>Alt/Option</td><td>M</td></tr>
-<tr><td>Shift</td><td>S</td></tr>
+<tr><td>Ctrl</td><td>C-</td></tr>
+<tr><td>Meta</td><td>M-</td></tr>
+<tr><td>Super</td><td>S-</td></tr>
+<tr><td>Hyper</td><td>H-</td></tr>
+<tr><td>Enter</td><td>RET</td></tr>
+<tr><td>Space</td><td>SPC</td></tr>
+<tr><td>F1</td><td><f1></td></tr>
+<tr><td>상하좌우</td><td><up>/<down>/<left>/<right></td></tr>
+<tr><td>마우스</td><td><mouse-1></td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>ref: <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>설명</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>키 확인</td><td>C-h c</td><td>describe-key-briefly</td></tr>
 </tbody></table>
 </div>
 <h2 id="필수-조작법"><a class="header" href="#필수-조작법">필수 조작법</a></h2>
@@ -486,6 +503,46 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>파일 열기(읽기전용)</td><td>C-x C-r</td><td>C-x 5 r</td><td>C-x t C-r</td></tr>
 </tbody></table>
 </div>
+<h2 id="모드"><a class="header" href="#모드">모드</a></h2>
+<ul>
+<li>주(매이져, Major)모드와 보조(마이너, Minor)모드가 있습니다.
+<ul>
+<li><code>M-x describe-mode RET</code> 으로 확인 할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="키고-끄기"><a class="header" href="#키고-끄기">키고 끄기</a></h2>
+<p>모드를 키고 끄는건 <code>+1</code> 혹은 <code>-1</code>을 사용하도록 합니다.</p>
+<pre><code class="language-lisp">(display-time-mode +1) ; 시간 켜기
+(display-time-mode -1) ; 시간 끄기 (0포함 음수면 끄기)
+</code></pre>
+<h3 id="예"><a class="header" href="#예">예</a></h3>
+<ul>
+<li>elisp파일을 열고 <code>M-x prettify-symbols-mode RET</code>으로 한 다음,</li>
+<li><code>M-x describe-mode RET</code>를 입력하면 매이저/마이너 모드를 확인 할 수 있습니다.
+<ul>
+<li>매이저 ELisp/d는 elisp-mode.el 정의되어있고, </li>
+<li>마이너 모드는 Auto-Save, Eldoc, Font-Lock, 그리고 아까 활성화시킨 Prettify-Symbols 가 활성되어있습니다.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-lisp">;; emacs-lisp-mode는 lisp-data-mode를
+;; lisp-data-mode는 prog-mode를
+;; prog-mode는 fundamental-mode를 상속받고 있습니다.
+
+;; emacs-lisp-mode
+;;   -|&gt; lisp-data-mode
+;;     -|&gt; prog-mode
+;;       -|&gt; fundamental-mode
+
+;; 그리고 lisp-data-mode는 다음 prettify-symbols-alist를 가지고 있다.
+;; alist란 association list(연관리스트)의 약자로, (key . value)의 리스트이다.
+(defconst lisp-prettify-symbols-alist '((&quot;lambda&quot;  . ?λ))
+  &quot;Alist of symbol/\&quot;pretty\&quot; characters to be displayed.&quot;)
+
+;; prettify-symbols-mode를 활성시켰으므로
+;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
+</code></pre>
 <h2 id="참고"><a class="header" href="#참고">참고</a></h2>
 <ul>
 <li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/tutorials/TUTORIAL.ko">TUTORIAL.ko</a></li>
@@ -499,9 +556,13 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 </ul>
 <h2 id="ielm"><a class="header" href="#ielm">ielm</a></h2>
 <p>IELM(<code>I</code>nteractive <code>E</code>macs <code>L</code>isp <code>M</code>ode)</p>
-<div class="table-wrapper"><table><thead><tr><th>기능</th><th>단축키</th></tr></thead><tbody>
-<tr><td>구동</td><td>M-x ielm</td></tr>
-<tr><td>도움말</td><td>C-h m</td></tr>
+<p><code>M-x ielm RET</code></p>
+<h3 id="기타-유용한-함수"><a class="header" href="#기타-유용한-함수">기타 유용한 함수</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>기능</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>코드 평가</td><td>M-<code>:</code></td><td>eval-expression</td></tr>
+<tr><td>모드확인</td><td></td><td>describe-mode</td></tr>
+<tr><td>변수설명</td><td></td><td>describe-variable</td></tr>
+<tr><td>함수설명</td><td></td><td>describe-function</td></tr>
 </tbody></table>
 </div>
 <h2 id="컴파일"><a class="header" href="#컴파일">컴파일</a></h2>
@@ -515,6 +576,9 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>.elf</td><td>네이티브 컴파일</td></tr>
 </tbody></table>
 </div>
+<ul>
+<li>참조: <a href="https://www.grugrut.net/posts/202104272222/">https://www.grugrut.net/posts/202104272222/</a></li>
+</ul>
 <h2 id="설정"><a class="header" href="#설정">설정</a></h2>
 <pre><code class="language-lisp">(progn ; `설정::한글'
   ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html
@@ -534,20 +598,59 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <p>예전에는 <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Yes_002dor_002dNo-Queries.html">(defalias 'yes-or-no-p 'y-or-n-p)</a> 이런식으로 했었다</p>
 <h2 id="맥-전용-옵션"><a class="header" href="#맥-전용-옵션">맥 전용 옵션</a></h2>
 <pre><code class="language-lisp">(progn ; `설정::macOs'
-  ;; ref: https://qiita.com/takashihattori/items/9ebc57bb5a68f0c87e35
-  (when (equal window-system 'mac)
-    (setq mac-function-modifier 'meta)
-    (setq mac-option-modifier 'meta)
-    (setq mac-command-modifier 'super)
-    ;; (global-set-key (kbd &quot;s-x&quot;) 'kill-region)
-    ;; (global-set-key (kbd &quot;s-c&quot;) 'kill-ring-save)
-    ;; (global-set-key (kbd &quot;s-v&quot;) 'yank)
-    ;; (global-set-key (kbd &quot;s-a&quot;) 'mark-whole-buffer)
-    ;; (global-set-key (kbd &quot;s-s&quot;) 'save-buffer)
-    ;; (global-set-key (kbd &quot;s-z&quot;) 'undo)
-    ;; (global-set-key (kbd &quot;s-+&quot;) 'text-scale-adjust)
-    ;; (global-set-key (kbd &quot;s--&quot;) 'text-scale-adjust)
+  ;;
+  ;; ns : NeXTSTEP. Darwin이전에 사용되던 OS
+  ;; darwin: Darwin (kernel)로 macOs의 기반이되는 코어.
+  ;; darwin/ns/mac 이라 치면 보통 macOs구나 라고 생각하면 편하다.
+  ;; mac-function-modifier =&gt; alias ns-function-modifier 
+  ;;
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mac-_002f-GNUstep-Customization.html
+  ;;
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |     |       |     |     |                   |     |     |
+  ;; |Fn   |Ctrl   |Optn |Cmd  |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |hyper|control|super|meta |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;;
+  (when (eq system-type 'darwin)
+    (setq ns-function-modifier 'hyper)
+    (setq ns-control-modifier 'control)
+    (setq ns-option-modifier 'super)
+    (setq ns-command-modifier 'meta)
+    ;; (global-set-key (kbd &quot;S-x&quot;) 'kill-region)
+    ;; (global-set-key (kbd &quot;S-c&quot;) 'kill-ring-save)
+    ;; (global-set-key (kbd &quot;S-v&quot;) 'yank)
+    ;; (global-set-key (kbd &quot;S-a&quot;) 'mark-whole-buffer)
+    ;; (global-set-key (kbd &quot;S-s&quot;) 'save-buffer)
+    ;; (global-set-key (kbd &quot;S-z&quot;) 'undo)
+    ;; (global-set-key (kbd &quot;S-+&quot;) 'text-scale-adjust)
+    ;; (global-set-key (kbd &quot;S--&quot;) 'text-scale-adjust)
     ))
+</code></pre>
+<h2 id="기타-1"><a class="header" href="#기타-1">기타</a></h2>
+<pre><code class="language-lisp">;; association list
+;; push를 사용하게 되면 같은 키가 여러개 생긴다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(push '(a . 1) x-alist)           ; ((a . 1) (a . 1))
+;; add-to-list를 사용하면 같은 키가 여러개 생기지 않는다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(add-to-list 'x-alist '(a . 1))   ; ((a . 1))
+(add-to-list 'x-alist '(a . 2))   ; ((a . 1) (a . 2)) ;; 의도하지 않은 결과가 나온다.
+;; ref: https://stackoverflow.com/a/25100962
+
+;; property list
+(defvar x-plist '(:a 1 :b 2))     ; (:a 1 :b 2)
+(plist-get x-plist :b)            ; 2
+
+
+;; 사전
+;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/Dictionaries.html
+;; memq
+&gt; (memq 9 '(1 2 3))
+nil
+&gt; (memq 2 '(1 2 3))
+(2 3)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="initel"><a class="header" href="#initel">init.el</a></h1>
 <p>Emacs가 시작될 때, 초기화 파일을 로드합니다. 초기화 파일은 <code>~/.emacs.el</code>, <code>~/.emacs</code>, <code>~/.emacs.d/init.el</code> 중 하나를 사용합니다.</p>
@@ -557,12 +660,20 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>~/.emacs.d/init.el</td></tr>
 </tbody></table>
 </div>
+<ul>
+<li>변수 <code>user-emacs-directory</code>는 초기화 파일이 있는 폴더 명시합니다.
+<ul>
+<li>ex) &quot;~/.emacs.d/&quot;</li>
+</ul>
+</li>
+</ul>
 <p>Emacs는 다음과 같은 시작 옵션을 제공합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>emacs 옵션</th><th>설명</th></tr></thead><tbody>
 <tr><td>--no-init-file / -q</td><td>기본 초기화 파일을 로드하지 않음</td></tr>
 <tr><td>--debug-init</td><td>초기화 파일에 디버거를 활성화 시킴</td></tr>
 <tr><td>--load 파일위치 / -l 파일위치</td><td>특정 파일을 로드함</td></tr>
 <tr><td>--no-window-system / -nw</td><td>GUI를 사용하지 않음</td></tr>
+<tr><td>--init-directory=폴더</td><td>init 폴더를 지정한 곳으로 설정가능</td></tr>
 </tbody></table>
 </div>
 <pre><code class="language-bash"># 예를들어 다른 위치에 있는 init.el을 로드하고 싶다면
@@ -570,6 +681,12 @@ emacs --no-init-file --load ~/other/init.el
 </code></pre>
 <ul>
 <li><code>.emacs.d/init.el</code>을 시작위치로, <code>.emacs.d/</code> 폴더를 github등을 이용해 버전관리해주면 좋습니다.</li>
+<li><code>.org</code>파일로 <code>.el</code>를 생성할 수 있는 점을 이용. 문서화와 코드를 동시에 관리하는 방법도 있습니다.
+<ul>
+<li>다만, 설정파일을 org로 다루는 것은 호불호가 갈리고, 무엇보다도 org를 다루기에는 너무나 방대합니다.</li>
+<li>따라서, <strong>여기서 Org는 다루지 않겠습니다</strong>.</li>
+</ul>
+</li>
 </ul>
 <h2 id="참고-1"><a class="header" href="#참고-1">참고</a></h2>
 <ul>
