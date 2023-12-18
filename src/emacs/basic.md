@@ -2,11 +2,24 @@
 
 **`Ctrl-G`** 중요합니다.
 
-| 키         | 기호 |
-| ---------- | ---- |
-| Ctrl       | C    |
-| Alt/Option | M    |
-| Shift      | S    |
+| 키       | 기호                       |
+| -------- | -------------------------- |
+| Ctrl     | C-                         |
+| Meta     | M-                         |
+| Super    | S-                         |
+| Hyper    | H-                         |
+| Enter    | RET                        |
+| Space    | SPC                        |
+| F1       | <f1>                       |
+| 상하좌우 | <up>/<down>/<left>/<right> |
+| 마우스   | <mouse-1>                  |
+
+- ref: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html>
+
+| 설명    | 단축키 | 함수                 |
+| ------- | ------ | -------------------- |
+| 키 확인 | C-h c  | describe-key-briefly |
+
 
 ## 필수 조작법
 
@@ -114,6 +127,46 @@
 | 다음으로 이동       | C-x o      | C-x 5 o   | C-x t o   |
 | 파일 열기           | C-x C-f    | C-x 5 C-f | C-x t C-f |
 | 파일 열기(읽기전용) | C-x C-r    | C-x 5 r   | C-x t C-r |
+
+## 모드
+
+- 주(매이져, Major)모드와 보조(마이너, Minor)모드가 있습니다.
+  - `M-x describe-mode RET` 으로 확인 할 수 있습니다.
+
+## 키고 끄기
+
+모드를 키고 끄는건 `+1` 혹은 `-1`을 사용하도록 합니다.
+
+``` lisp
+(display-time-mode +1) ; 시간 켜기
+(display-time-mode -1) ; 시간 끄기 (0포함 음수면 끄기)
+```
+
+### 예
+
+- elisp파일을 열고 `M-x prettify-symbols-mode RET`으로 한 다음,
+- `M-x describe-mode RET`를 입력하면 매이저/마이너 모드를 확인 할 수 있습니다.
+  - 매이저 ELisp/d는 elisp-mode.el 정의되어있고, 
+  - 마이너 모드는 Auto-Save, Eldoc, Font-Lock, 그리고 아까 활성화시킨 Prettify-Symbols 가 활성되어있습니다.
+
+``` lisp
+;; emacs-lisp-mode는 lisp-data-mode를
+;; lisp-data-mode는 prog-mode를
+;; prog-mode는 fundamental-mode를 상속받고 있습니다.
+
+;; emacs-lisp-mode
+;;   -|> lisp-data-mode
+;;     -|> prog-mode
+;;       -|> fundamental-mode
+
+;; 그리고 lisp-data-mode는 다음 prettify-symbols-alist를 가지고 있다.
+;; alist란 association list(연관리스트)의 약자로, (key . value)의 리스트이다.
+(defconst lisp-prettify-symbols-alist '(("lambda"  . ?λ))
+  "Alist of symbol/\"pretty\" characters to be displayed.")
+
+;; prettify-symbols-mode를 활성시켰으므로
+;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
+```
 
 
 ## 참고
