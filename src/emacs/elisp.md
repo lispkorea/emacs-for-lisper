@@ -29,6 +29,8 @@ IELM(`I`nteractive `E`macs `L`isp `M`ode)
 | .elc   | 바이트 컴파일   |
 | .elf   | 네이티브 컴파일 |
 
+- 참조: <https://www.grugrut.net/posts/202104272222/>
+
 
 ## 설정
 
