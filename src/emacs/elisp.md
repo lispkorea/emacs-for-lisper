@@ -7,10 +7,16 @@
 
 IELM(`I`nteractive `E`macs `L`isp `M`ode)
 
-| 기능   | 단축키   |
-| ------ | -------- |
-| 구동   | M-x ielm |
-| 도움말 | C-h m    |
+`M-x ielm RET`
+
+### 기타 유용한 함수
+
+| 기능      | 단축키 | 함수              |
+| --------- | ------ | ----------------- |
+| 코드 평가 | M-`:`  | eval-expression   |
+| 모드확인  |        | describe-mode     |
+| 변수설명  |        | describe-variable |
+| 함수설명  |        | describe-function |
 
 ## 컴파일
 
@@ -55,18 +61,60 @@ IELM(`I`nteractive `E`macs `L`isp `M`ode)
 
 ``` lisp
 (progn ; `설정::macOs'
-  ;; ref: https://qiita.com/takashihattori/items/9ebc57bb5a68f0c87e35
-  (when (equal window-system 'mac)
-    (setq mac-function-modifier 'meta)
-    (setq mac-option-modifier 'meta)
-    (setq mac-command-modifier 'super)
-    ;; (global-set-key (kbd "s-x") 'kill-region)
-    ;; (global-set-key (kbd "s-c") 'kill-ring-save)
-    ;; (global-set-key (kbd "s-v") 'yank)
-    ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
-    ;; (global-set-key (kbd "s-s") 'save-buffer)
-    ;; (global-set-key (kbd "s-z") 'undo)
-    ;; (global-set-key (kbd "s-+") 'text-scale-adjust)
-    ;; (global-set-key (kbd "s--") 'text-scale-adjust)
+  ;;
+  ;; ns : NeXTSTEP. Darwin이전에 사용되던 OS
+  ;; darwin: Darwin (kernel)로 macOs의 기반이되는 코어.
+  ;; darwin/ns/mac 이라 치면 보통 macOs구나 라고 생각하면 편하다.
+  ;; mac-function-modifier => alias ns-function-modifier 
+  ;;
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mac-_002f-GNUstep-Customization.html
+  ;;
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |     |       |     |     |                   |     |     |
+  ;; |Fn   |Ctrl   |Optn |Cmd  |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;; |hyper|control|super|meta |       Space       |Cmd  |Optn |
+  ;; +-----+-------+-----+-----+-------------------+-----+-----+
+  ;;
+  (when (eq system-type 'darwin)
+    (setq ns-function-modifier 'hyper)
+    (setq ns-control-modifier 'control)
+    (setq ns-option-modifier 'super)
+    (setq ns-command-modifier 'meta)
+    ;; (global-set-key (kbd "S-x") 'kill-region)
+    ;; (global-set-key (kbd "S-c") 'kill-ring-save)
+    ;; (global-set-key (kbd "S-v") 'yank)
+    ;; (global-set-key (kbd "S-a") 'mark-whole-buffer)
+    ;; (global-set-key (kbd "S-s") 'save-buffer)
+    ;; (global-set-key (kbd "S-z") 'undo)
+    ;; (global-set-key (kbd "S-+") 'text-scale-adjust)
+    ;; (global-set-key (kbd "S--") 'text-scale-adjust)
     ))
+```
+
+## 기타
+
+``` lisp
+;; association list
+;; push를 사용하게 되면 같은 키가 여러개 생긴다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(push '(a . 1) x-alist)           ; ((a . 1) (a . 1))
+;; add-to-list를 사용하면 같은 키가 여러개 생기지 않는다.
+(defvar x-alist '((a . 1)))       ; ((a . 1))
+(add-to-list 'x-alist '(a . 1))   ; ((a . 1))
+(add-to-list 'x-alist '(a . 2))   ; ((a . 1) (a . 2)) ;; 의도하지 않은 결과가 나온다.
+;; ref: https://stackoverflow.com/a/25100962
+
+;; property list
+(defvar x-plist '(:a 1 :b 2))     ; (:a 1 :b 2)
+(plist-get x-plist :b)            ; 2
+
+
+;; 사전
+;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/Dictionaries.html
+;; memq
+> (memq 9 '(1 2 3))
+nil
+> (memq 2 '(1 2 3))
+(2 3)
 ```
