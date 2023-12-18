@@ -105,10 +105,15 @@ sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/profile
 # git 설치
 brew install git
 
+# font 설치
+brew tap homebrew/cask-fonts
+brew install font-d2coding-nerd-font
+```
+
+``` sh
 # emacs 설치
 brew install --cask emacs
 ```
-
 
 ### 좀 더 옵션을 자유롭게 넣고 싶다
 
@@ -116,12 +121,6 @@ brew install --cask emacs
   - `--with-native-comp` 옵션이 있는 homebrew-emacs-plus로 선택
 
 ``` sh
-# homebrew 설치
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# git 설치
-brew install git
-
 # emacs 설치
 brew tap d12frosted/emacs-plus
 # for Just-In-Time Compilation
