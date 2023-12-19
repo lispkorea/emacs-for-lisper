@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html" class="active">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html" class="active">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -191,15 +191,49 @@
 <tr><td></td><td></td><td>M-x display-line-numbers-mode / (성능문제로 c언어로 작성)</td></tr>
 <tr><td>27.1</td><td>2020-08-10</td><td></td></tr>
 <tr><td></td><td></td><td>렉시컬 바인딩(기본 활성화)</td></tr>
+<tr><td></td><td></td><td>cl =&gt;  cl-lib</td></tr>
 <tr><td>29.1</td><td>2023-07-30</td><td></td></tr>
 <tr><td></td><td></td><td>Tree-sitter</td></tr>
 <tr><td></td><td></td><td>EGlot</td></tr>
 <tr><td></td><td></td><td>use-package</td></tr>
+<tr><td></td><td></td><td>package-vc-install</td></tr>
 <tr><td></td><td></td><td>--init-directory 옵션</td></tr>
 <tr><td></td><td></td><td>M-x restart-emacs</td></tr>
 <tr><td></td><td></td><td>linum-mode (elisp) =&gt; 사라짐</td></tr>
+<tr><td>30.1</td><td>-</td><td></td></tr>
+<tr><td></td><td></td><td>use-package - :vc 키워드 지원</td></tr>
 </tbody></table>
 </div>
+<h2 id="emacs-mirror"><a class="header" href="#emacs-mirror">emacs-mirror</a></h2>
+<ul>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.29">NEWS.29</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.28">NEWS.28</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.27">NEWS.27</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.26">NEWS.26</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.25">NEWS.25</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.24">NEWS.24</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.23">NEWS.23</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.22">NEWS.22</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.21">NEWS.21</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.20">NEWS.20</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.19">NEWS.19</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.18">NEWS.18</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.1-17">NEWS.1-17</a></li>
+</ul>
+<h2 id="masteringemacs"><a class="header" href="#masteringemacs">masteringemacs</a></h2>
+<ul>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-29-1">29.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-28-1">28.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-27-1">27.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-26-1">26.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-25-1">25.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-24-4">24.4</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-emacs-24-3">24.3</a></li>
+<li><a href="https://www.masteringemacs.org/article/what-is-new-in-emacs-24-part-2">24-part-2</a></li>
+<li><a href="https://www.masteringemacs.org/article/what-is-new-in-emacs-24-part-1">24-part-1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-emacs-23-3">23.3</a></li>
+</ul>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

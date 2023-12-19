@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -202,8 +202,23 @@
 <iframe width="800" height="600" src="https://www.youtube.com/embed/PqwuIfl-G1w?si=7lpcc1FphHXuo_d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="자주-뭍는-질문"><a class="header" href="#자주-뭍는-질문">자주 뭍는 질문</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="emacs-설치"><a class="header" href="#emacs-설치">Emacs 설치</a></h1>
 <p>emacs 컴파일 옵션이 여러가지가 있으며, 아래 명령어를 통해 확인할 수 있습니다.</p>
+<ul>
+<li>설치
+<ul>
+<li><a href="emacs/install.html#windows">windows</a></li>
+<li><a href="emacs/install.html#linux">linux</a></li>
+<li><a href="emacs/install.html#macos">macOs</a></li>
+</ul>
+</li>
+<li>폰트
+<ul>
+<li><a href="https://github.com/naver/d2codingfont">D2Coding 고정폭 폰트</a></li>
+</ul>
+</li>
+</ul>
 <pre><code class="language-sh"># ref: https://emacs.stackexchange.com/a/35512
-emacs -nw -q --batch --eval '(message system-configuration-options)'
+# 설치된 emacs의 컴파일 옵션 확인
+emacs --no-window-system --no-init-file --batch --eval &quot;(message system-configuration-options)&quot;
 </code></pre>
 <h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
 <ul>
@@ -215,12 +230,24 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 ## git과 emacs 설치
 scoop bucket add extras
-scoop update
-scoop install git
 scoop install emacs
+scoop bucket add main
+scoop install git
+
+# 윈도우10에서는 BSD Tar가 설치되어 있음. 하지만 필요한건 GNU Tar
+scoop bucket add main
+scoop install tar
 
 # 기타 유틸들
-scoop install ag direnv fzf global openssh ripgrep gow fd gpg
+scoop bucket add main
+scoop install ripgrep
+scoop install direnv
+scoop install fzf
+scoop install global
+scoop install openssh
+scoop install gow
+scoop install fd
+scoop install gpg
 </code></pre>
 <ul>
 <li>기타
@@ -248,7 +275,7 @@ scoop install ag direnv fzf global openssh ripgrep gow fd gpg
 <pre><code class="language-sh">sudo apt update
 
 # 기본적으로 git은 설치하자
-sudo apt-get install git
+sudo apt-get install -y git
 </code></pre>
 <h3 id="스냅-설정"><a class="header" href="#스냅-설정">스냅 설정</a></h3>
 <ul>
@@ -258,9 +285,11 @@ sudo apt-get install git
 </ul>
 </li>
 </ul>
-<pre><code class="language-sh">sudo apt install snapd
-sudo snap install emacs --classic
-sudo snap remove
+<pre><code class="language-sh">sudo apt install -y snapd
+sudo snap install -y emacs --classic
+
+# 삭제시
+# sudo snap remove
 </code></pre>
 <div class="table-wrapper"><table><thead><tr><th><a href="https://snapcraft.io/docs/install-modes">모드</a></th><th>설명</th></tr></thead><tbody>
 <tr><td>--classic</td><td>classic confinement for full system access</td></tr>
@@ -274,21 +303,35 @@ sudo snap remove
 </tbody></table>
 </div>
 <h3 id="한글-설정"><a class="header" href="#한글-설정">한글 설정</a></h3>
-<pre><code class="language-sh"># ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
-
-sudo apt-get install language-pack-ko
-sudo apt-get install language-pack-ko-base
-sudo apt-get install localepurge
-
-# /etc/default/locale
+<pre><code class="language-sh"># /etc/default/locale
 # /etc/environment
 # /etc/profile
+
+# 언어팩 설치
+sudo apt-get install -y language-pack-ko
+sudo apt-get install -y language-pack-ko-base
+sudo apt-get install -y localepurge
+
 
 sudo echo &quot;ko_KR.EUC-KR EUC-KR&quot; &gt;&gt; /var/lib/locales/supported.d/ko
 sudo locale-gen --purge
 sudo dpkg-reconfigure locales
 sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/environment
 sudo echo 'LANG=&quot;ko_KR.UTF-8&quot;' &gt;&gt; /etc/profile
+
+# 고정폭 폰트 설치
+sudo apt-get install -y fonts-naver-d2coding 
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>/usr/share/fonts/</td><td>fonts for all users</td></tr>
+<tr><td>~/.local/share/fonts/</td><td>fonts for particular user</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-sh"># fc-cache : 폰트 빌드
+fc-cache  --force --verbose
+
+# fc-list : 폰트 목록 확인
+fc-list
 </code></pre>
 <h2 id="macos"><a class="header" href="#macos">macOs</a></h2>
 <ul>
@@ -369,15 +412,49 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td></td><td></td><td>M-x display-line-numbers-mode / (성능문제로 c언어로 작성)</td></tr>
 <tr><td>27.1</td><td>2020-08-10</td><td></td></tr>
 <tr><td></td><td></td><td>렉시컬 바인딩(기본 활성화)</td></tr>
+<tr><td></td><td></td><td>cl =&gt;  cl-lib</td></tr>
 <tr><td>29.1</td><td>2023-07-30</td><td></td></tr>
 <tr><td></td><td></td><td>Tree-sitter</td></tr>
 <tr><td></td><td></td><td>EGlot</td></tr>
 <tr><td></td><td></td><td>use-package</td></tr>
+<tr><td></td><td></td><td>package-vc-install</td></tr>
 <tr><td></td><td></td><td>--init-directory 옵션</td></tr>
 <tr><td></td><td></td><td>M-x restart-emacs</td></tr>
 <tr><td></td><td></td><td>linum-mode (elisp) =&gt; 사라짐</td></tr>
+<tr><td>30.1</td><td>-</td><td></td></tr>
+<tr><td></td><td></td><td>use-package - :vc 키워드 지원</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
+</div>
+<h2 id="emacs-mirror"><a class="header" href="#emacs-mirror">emacs-mirror</a></h2>
+<ul>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.29">NEWS.29</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.28">NEWS.28</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.27">NEWS.27</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.26">NEWS.26</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.25">NEWS.25</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.24">NEWS.24</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.23">NEWS.23</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.22">NEWS.22</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.21">NEWS.21</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.20">NEWS.20</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.19">NEWS.19</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.18">NEWS.18</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.1-17">NEWS.1-17</a></li>
+</ul>
+<h2 id="masteringemacs"><a class="header" href="#masteringemacs">masteringemacs</a></h2>
+<ul>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-29-1">29.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-28-1">28.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-27-1">27.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-26-1">26.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-25-1">25.1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-in-emacs-24-4">24.4</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-emacs-24-3">24.3</a></li>
+<li><a href="https://www.masteringemacs.org/article/what-is-new-in-emacs-24-part-2">24-part-2</a></li>
+<li><a href="https://www.masteringemacs.org/article/what-is-new-in-emacs-24-part-1">24-part-1</a></li>
+<li><a href="https://www.masteringemacs.org/article/whats-new-emacs-23-3">23.3</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="기본-조작법"><a class="header" href="#기본-조작법">기본 조작법</a></h1>
 <p><strong><code>Ctrl-G</code></strong> 중요합니다.</p>
 <div class="table-wrapper"><table><thead><tr><th>키</th><th>기호</th></tr></thead><tbody>
 <tr><td>Ctrl</td><td>C-</td></tr>
@@ -693,7 +770,73 @@ emacs --no-init-file --load ~/other/init.el
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="패키지-매니져"><a class="header" href="#패키지-매니져">패키지 매니져</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="패키지-관리자"><a class="header" href="#패키지-관리자">패키지 관리자</a></h1>
+<ul>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el">package.el 소스</a>
+<ul>
+<li>Emacs 24부터(2012년 6월) 내장</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>M-x</th><th></th></tr></thead><tbody>
+<tr><td>package-list-packages</td><td></td></tr>
+<tr><td>package-initialize</td><td></td></tr>
+<tr><td>package-refresh-contents</td><td></td></tr>
+<tr><td>package-install 패키지명</td><td></td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">(require 'package)
+(setq package-user-dir &quot;~/.emacs.d/__package&quot;)
+(setq package-check-signature nil)
+(setq package-archives
+      '(
+        ;; official - gnu
+        (&quot;gnu&quot; . &quot;https://elpa.gnu.org/packages/&quot;)
+
+        ;; officiral - melpa
+        (&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;)
+        (&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;)
+
+        ;; 이하 미러는 기호에 맞게 추가
+        ;; mirror - melpa mirrorservice
+        (&quot;melpa&quot; . &quot;http://www.mirrorservice.org/sites/melpa.org/packages/&quot;)
+        (&quot;melpa-stable&quot; . &quot;http://www.mirrorservice.org/sites/stable.melpa.org/packages/&quot;)
+
+        ;; mirror - melpa 중국
+        (&quot;melpa&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&quot;)
+        (&quot;melpa-stable&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/&quot;)
+        ))
+(package-initialize)
+</code></pre>
+<h2 id="패키지-설정"><a class="header" href="#패키지-설정">패키지 설정</a></h2>
+<ul>
+<li><a href="https://github.com/jwiegley/use-package">use-package</a>
+<ul>
+<li>A use-package declaration for simplifying your .emacs </li>
+<li>29.1부터 기본 탑재</li>
+</ul>
+</li>
+<li><a href="https://github.com/dimitri/el-get">el-get</a>
+<ul>
+<li>Manage the external elisp bits and pieces upon which you depend!</li>
+</ul>
+</li>
+<li><a href="https://github.com/conao3/leaf.el">leaf.el</a>
+<ul>
+<li>Flexible, declarative, and modern init.el package configuration </li>
+</ul>
+</li>
+<li><a href="https://github.com/radian-software/straight.el">straight.el</a></li>
+<li><a href="https://github.com/progfolio/elpaca">elpaca</a>
+<ul>
+<li>Elpaca는 심볼릭 링크가 필수</li>
+</ul>
+</li>
+</ul>
+<h2 id="설정-1"><a class="header" href="#설정-1">설정</a></h2>
+<ul>
+<li><a href="https://github.com/emacs-jp/init-loader">init-loader</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="다양한-패키지"><a class="header" href="#다양한-패키지">다양한 패키지</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="색상-테마"><a class="header" href="#색상-테마">색상 테마</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="common-lisp-설정"><a class="header" href="#common-lisp-설정">Common Lisp 설정</a></h1>
@@ -742,7 +885,13 @@ emacs --no-init-file --load ~/other/init.el
 <tr><td>멈추었을시</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>C-c C-b</td><td>인터럽트 시그날</td><td>cider-interrupt</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="읽어볼거리"><a class="header" href="#읽어볼거리">읽어볼거리</a></h1>
+<ul>
+<li><a href="https://www.slideshare.net/ssuser8ec829/ndc2017spacemacs">NDC 2017 마이크로토크 - Spacemacs: 최고의 에디터는 Emacs도 Vim도 아니다. Emacs와 Vim이다!</a></li>
+<li><a href="https://news.hada.io/topic?id=6758">Ask GN: 이맥스 20년 쓰다가 Vimmer로 전향했습니다. </a></li>
+<li><a href="https://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life">How Emacs changed my life - Yukihiro Matsumoto (Matz)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 <ul>
 <li><a href="https://github.com/netpyoung">netpyoung</a></li>
 </ul>
