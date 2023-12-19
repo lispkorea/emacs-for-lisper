@@ -2,9 +2,17 @@
 
 emacs 컴파일 옵션이 여러가지가 있으며, 아래 명령어를 통해 확인할 수 있습니다.
 
+- 설치
+  - [windows](#windows)
+  - [linux](#linux)
+  - [macOs](#macos)
+- 폰트
+  - [D2Coding 고정폭 폰트](https://github.com/naver/d2codingfont)
+
 ``` sh
 # ref: https://emacs.stackexchange.com/a/35512
-emacs -nw -q --batch --eval '(message system-configuration-options)'
+# 설치된 emacs의 컴파일 옵션 확인
+emacs --no-window-system --no-init-file --batch --eval "(message system-configuration-options)"
 ```
 
 ## Windows
@@ -18,12 +26,24 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 ## git과 emacs 설치
 scoop bucket add extras
-scoop update
-scoop install git
 scoop install emacs
+scoop bucket add main
+scoop install git
+
+# 윈도우10에서는 BSD Tar가 설치되어 있음. 하지만 필요한건 GNU Tar
+scoop bucket add main
+scoop install tar
 
 # 기타 유틸들
-scoop install ag direnv fzf global openssh ripgrep gow fd gpg
+scoop bucket add main
+scoop install ripgrep
+scoop install direnv
+scoop install fzf
+scoop install global
+scoop install openssh
+scoop install gow
+scoop install fd
+scoop install gpg
 ```
 
 - 기타
@@ -41,7 +61,7 @@ scoop install ag direnv fzf global openssh ripgrep gow fd gpg
 sudo apt update
 
 # 기본적으로 git은 설치하자
-sudo apt-get install git
+sudo apt-get install -y git
 ```
 
 ### 스냅 설정
@@ -50,9 +70,11 @@ sudo apt-get install git
   - <https://snapcraft.io/emacs>
 
 ``` sh
-sudo apt install snapd
-sudo snap install emacs --classic
-sudo snap remove
+sudo apt install -y snapd
+sudo snap install -y emacs --classic
+
+# 삭제시
+# sudo snap remove
 ```
 
 | [모드](https://snapcraft.io/docs/install-modes) | 설명                                                  |
@@ -72,21 +94,37 @@ sudo snap remove
 ### 한글 설정
 
 ``` sh
-# ref: https://gist.github.com/wisedier/3f9ebfa376ebfc31165a
-
-sudo apt-get install language-pack-ko
-sudo apt-get install language-pack-ko-base
-sudo apt-get install localepurge
-
 # /etc/default/locale
 # /etc/environment
 # /etc/profile
+
+# 언어팩 설치
+sudo apt-get install -y language-pack-ko
+sudo apt-get install -y language-pack-ko-base
+sudo apt-get install -y localepurge
+
 
 sudo echo "ko_KR.EUC-KR EUC-KR" >> /var/lib/locales/supported.d/ko
 sudo locale-gen --purge
 sudo dpkg-reconfigure locales
 sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/environment
 sudo echo 'LANG="ko_KR.UTF-8"' >> /etc/profile
+
+# 고정폭 폰트 설치
+sudo apt-get install -y fonts-naver-d2coding 
+```
+
+|                       |                           |
+| --------------------- | ------------------------- |
+| /usr/share/fonts/     | fonts for all users       |
+| ~/.local/share/fonts/ | fonts for particular user |
+
+``` sh
+# fc-cache : 폰트 빌드
+fc-cache  --force --verbose
+
+# fc-list : 폰트 목록 확인
+fc-list
 ```
 
 ## macOs
