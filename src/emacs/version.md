@@ -4,15 +4,8 @@
 
 | 버전 | 날짜       | 주요 변경사항                                             |
 | ---- | ---------- | --------------------------------------------------------- |
-| 24.1 | 2012-06-10 |                                                           |
-|      |            | package.el(기본 탑재)                                     |
-| 24.4 | 2014-10-20 |                                                           |
-|      |            | M-x prettify-symbols-mode                                 |
-| 26.1 | 2018-05-28 |                                                           |
-|      |            | M-x display-line-numbers-mode / (성능문제로 c언어로 작성) |
-| 27.1 | 2020-08-10 |                                                           |
-|      |            | 렉시컬 바인딩(기본 활성화)                                |
-|      |            | cl =>  cl-lib                                             |
+| 30.1 | -          |                                                           |
+|      |            | use-package - :vc 키워드 지원                             |
 | 29.1 | 2023-07-30 |                                                           |
 |      |            | Tree-sitter                                               |
 |      |            | EGlot                                                     |
@@ -21,8 +14,20 @@
 |      |            | --init-directory 옵션                                     |
 |      |            | M-x restart-emacs                                         |
 |      |            | linum-mode (elisp) => 사라짐                              |
-| 30.1 | -          |                                                           |
-|      |            | use-package - :vc 키워드 지원                             |
+| 28.1 | 2022-04-04 |                                                           |
+|      |            | use-short-answers                                         |
+| 27.1 | 2020-08-10 |                                                           |
+|      |            | 렉시컬 바인딩(기본 활성화)                                |
+|      |            | cl =>  cl-lib                                             |
+| 26.1 | 2018-05-28 |                                                           |
+|      |            | M-x display-line-numbers-mode / (성능문제로 c언어로 작성) |
+|      |            | read-answer-short                                         |
+| 24.4 | 2014-10-20 |                                                           |
+|      |            | M-x prettify-symbols-mode                                 |
+| 24.1 | 2012-06-10 |                                                           |
+|      |            | package.el(기본 탑재)                                     |
+| 21.1 | 2001-10-28 |                                                           |
+|      |            | global-hl-line-mode                                       |
 
 ## emacs-mirror
 
