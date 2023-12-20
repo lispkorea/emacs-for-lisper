@@ -332,6 +332,10 @@ fc-cache  --force --verbose
 
 # fc-list : 폰트 목록 확인
 fc-list
+
+# fc-query : 폰트 정보 확인
+# download: https://raw.githubusercontent.com/kelvinks/D2Coding_Nerd/master/D2Coding%20v.1.3.2%20Nerd%20Font%20Complete.ttf
+fc-query ./D2Coding%20v.1.3.2%20Nerd%20Font%20Complete.ttf | grep family
 </code></pre>
 <h2 id="macos"><a class="header" href="#macos">macOs</a></h2>
 <ul>
@@ -359,10 +363,15 @@ fc-list
 
 # git 설치
 brew install git
+# gnu-tar 설치
+brew install gnu-tar
 
 # font 설치
 brew tap homebrew/cask-fonts
 brew install font-d2coding-nerd-font
+
+# 기타 유틸들
+brew install ripgrep
 </code></pre>
 <pre><code class="language-sh"># emacs 설치
 brew install --cask emacs
@@ -399,30 +408,60 @@ brew install emacs-plus@29 --with-native-comp
 
 ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 </code></pre>
+<h3 id="macos-락스크린-방지"><a class="header" href="#macos-락스크린-방지">macOs 락스크린 방지</a></h3>
+<ul>
+<li><code>Control-Command-Q</code> : 화면 잠금 단축키가 할당되어 있다.</li>
+<li>lisp-mode에선 <code>C-M-q</code>가 <code>indent-pp-sexp</code>로 할당되어 있다.
+<ul>
+<li><code>indent-pp-sexp</code>: 괄호로 묶여 있는 모든 줄을 재정렬한다.</li>
+</ul>
+</li>
+<li>자주 쓰는 기능인데 단축키가 겹쳐 화면 잠금 단축키를 덮어 씌우는 편이 좋다.
+<ul>
+<li><code> &gt; 하단에보면 &gt; 화면 잠금</code>이 있는데 이걸 다른키로 맵핑 시킬 것이다.</li>
+<li><code> &gt; 시스템 설정 &gt; 키보드 &gt; 키보드 단축키... &gt; 앱 단축키 &gt; 모든 응용 프로그램 &gt;  +</code>
+<ul>
+<li><code>메뉴 제목</code>에 <code>화면 잠금</code>을 입력한다. ( 눌러서 이름/띄어쓰기가 동일한지 확인)</li>
+<li>원하는 단축키를 입력한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
+<ul>
+<li><a href="https://github.com/syl20bnr/spacemacs">https://github.com/syl20bnr/spacemacs</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="버전"><a class="header" href="#버전">버전</a></h1>
 <ul>
 <li><a href="https://www.gnu.org/software/emacs/history.html">GNU Emacs Release History</a></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>버전</th><th>날짜</th><th>주요 변경사항</th></tr></thead><tbody>
-<tr><td>24.1</td><td>2012-06-10</td><td></td></tr>
-<tr><td></td><td></td><td>package.el(기본 탑재)</td></tr>
-<tr><td>24.4</td><td>2014-10-20</td><td></td></tr>
-<tr><td></td><td></td><td>M-x prettify-symbols-mode</td></tr>
-<tr><td>26.1</td><td>2018-05-28</td><td></td></tr>
-<tr><td></td><td></td><td>M-x display-line-numbers-mode / (성능문제로 c언어로 작성)</td></tr>
-<tr><td>27.1</td><td>2020-08-10</td><td></td></tr>
-<tr><td></td><td></td><td>렉시컬 바인딩(기본 활성화)</td></tr>
-<tr><td></td><td></td><td>cl =&gt;  cl-lib</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>버전</th><th>날짜</th><th>주목할만 변경사항</th></tr></thead><tbody>
+<tr><td>30.1</td><td>-</td><td></td></tr>
+<tr><td></td><td></td><td>use-package - :vc 키워드 지원</td></tr>
 <tr><td>29.1</td><td>2023-07-30</td><td></td></tr>
 <tr><td></td><td></td><td>Tree-sitter</td></tr>
 <tr><td></td><td></td><td>EGlot</td></tr>
-<tr><td></td><td></td><td>use-package</td></tr>
+<tr><td></td><td></td><td>탑재: use-package</td></tr>
 <tr><td></td><td></td><td>package-vc-install</td></tr>
-<tr><td></td><td></td><td>--init-directory 옵션</td></tr>
 <tr><td></td><td></td><td>M-x restart-emacs</td></tr>
-<tr><td></td><td></td><td>linum-mode (elisp) =&gt; 사라짐</td></tr>
-<tr><td>30.1</td><td>-</td><td></td></tr>
-<tr><td></td><td></td><td>use-package - :vc 키워드 지원</td></tr>
+<tr><td></td><td></td><td>옵션: --init-directory</td></tr>
+<tr><td></td><td></td><td>사라짐: linum-mode (elisp로 작성된거라 느림)</td></tr>
+<tr><td>28.1</td><td>2022-04-04</td><td></td></tr>
+<tr><td></td><td></td><td>use-short-answers</td></tr>
+<tr><td>27.1</td><td>2020-08-10</td><td></td></tr>
+<tr><td></td><td></td><td>기본 활성화: 렉시컬 바인딩</td></tr>
+<tr><td></td><td></td><td>이름변경: cl =&gt;  cl-lib</td></tr>
+<tr><td>26.1</td><td>2018-05-28</td><td></td></tr>
+<tr><td></td><td></td><td>M-x display-line-numbers-mode / (속도향상위해 c언어로 작성됨)</td></tr>
+<tr><td></td><td></td><td>read-answer-short</td></tr>
+<tr><td>24.4</td><td>2014-10-20</td><td></td></tr>
+<tr><td></td><td></td><td>M-x prettify-symbols-mode</td></tr>
+<tr><td>24.1</td><td>2012-06-10</td><td></td></tr>
+<tr><td></td><td></td><td>탑재: package.el</td></tr>
+<tr><td></td><td></td><td>prog-mode</td></tr>
+<tr><td>21.1</td><td>2001-10-28</td><td></td></tr>
+<tr><td></td><td></td><td>global-hl-line-mode</td></tr>
 </tbody></table>
 </div>
 <h2 id="emacs-mirror"><a class="header" href="#emacs-mirror">emacs-mirror</a></h2>
@@ -466,13 +505,6 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>F1</td><td><f1></td></tr>
 <tr><td>상하좌우</td><td><up>/<down>/<left>/<right></td></tr>
 <tr><td>마우스</td><td><mouse-1></td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>ref: <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html</a></li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>설명</th><th>단축키</th><th>함수</th></tr></thead><tbody>
-<tr><td>키 확인</td><td>C-h c</td><td>describe-key-briefly</td></tr>
 </tbody></table>
 </div>
 <h2 id="필수-조작법"><a class="header" href="#필수-조작법">필수 조작법</a></h2>
@@ -537,6 +569,20 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>바꾸기(정규표현식)</td><td>C-M-%</td></tr>
 </tbody></table>
 </div>
+<h3 id="헬프"><a class="header" href="#헬프">헬프</a></h3>
+<ul>
+<li>ref: <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>설명</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>키 확인(간단히)</td><td>C-h c</td><td>describe-key-briefly</td></tr>
+<tr><td>키 확인(자세히)</td><td>C-h k</td><td>describe-key</td></tr>
+<tr><td>정보보기</td><td>C-h i</td><td>info</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><code>C-h i m Elisp RET</code> : <a href="https://www.gnu.org/software/emacs/manual/elisp.html">GNU Emacs Lisp Reference Manual</a></li>
+<li><code>C-h i m Emacs Lisp Intro RET</code> : <a href="https://www.gnu.org/software/emacs/manual/eintr.html">An Introduction to Programming in Emacs Lisp</a></li>
+</ul>
 <h2 id="shell"><a class="header" href="#shell">shell</a></h2>
 <ul>
 <li><a href="https://unix.stackexchange.com/a/180129">https://unix.stackexchange.com/a/180129</a>
@@ -593,7 +639,7 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <pre><code class="language-lisp">(display-time-mode +1) ; 시간 켜기
 (display-time-mode -1) ; 시간 끄기 (0포함 음수면 끄기)
 </code></pre>
-<h3 id="예"><a class="header" href="#예">예</a></h3>
+<h3 id="예"><a class="header" href="#예">예)</a></h3>
 <ul>
 <li>elisp파일을 열고 <code>M-x prettify-symbols-mode RET</code>으로 한 다음,</li>
 <li><code>M-x describe-mode RET</code>를 입력하면 매이저/마이너 모드를 확인 할 수 있습니다.
@@ -604,7 +650,7 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 </li>
 </ul>
 <pre><code class="language-lisp">;; emacs-lisp-mode는 lisp-data-mode를
-;; lisp-data-mode는 prog-mode를
+;; lisp-data-mode는 prog-mode(programming mode)를
 ;; prog-mode는 fundamental-mode를 상속받고 있습니다.
 
 ;; emacs-lisp-mode
@@ -630,6 +676,8 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <div style="break-before: page; page-break-before: always;"></div><h1 id="elisp"><a class="header" href="#elisp">elisp</a></h1>
 <ul>
 <li><a href="https://www.gnu.org/software/emacs/manual/elisp.html">메뉴얼</a></li>
+<li><a href="https://github.com/bbatsov/emacs-lisp-style-guide">스타일가이드</a></li>
+<li><a href="https://emacsdocs.org/docs/elisp/Emacs-Lisp">emacsdocs: elisp</a></li>
 </ul>
 <h2 id="ielm"><a class="header" href="#ielm">ielm</a></h2>
 <p>IELM(<code>I</code>nteractive <code>E</code>macs <code>L</code>isp <code>M</code>ode)</p>
@@ -640,6 +688,10 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>모드확인</td><td></td><td>describe-mode</td></tr>
 <tr><td>변수설명</td><td></td><td>describe-variable</td></tr>
 <tr><td>함수설명</td><td></td><td>describe-function</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>.el 파일에서</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>form 평가</td><td>C-M-x</td><td>eval-defun</td></tr>
+<tr><td>괄호로 묶여 있는 모든 줄을 재정렬</td><td>C-M-q</td><td>indent-pp-sexp</td></tr>
 </tbody></table>
 </div>
 <h2 id="컴파일"><a class="header" href="#컴파일">컴파일</a></h2>
@@ -753,8 +805,12 @@ nil
 <tr><td>--init-directory=폴더</td><td>init 폴더를 지정한 곳으로 설정가능</td></tr>
 </tbody></table>
 </div>
-<pre><code class="language-bash"># 예를들어 다른 위치에 있는 init.el을 로드하고 싶다면
+<pre><code class="language-bash"># init폴더 영향 없이 다른 위치에 있는 elisp만 로드
 emacs --no-init-file --load ~/other/init.el
+
+# 다른 위치에 있는 init 폴더로 초기화 하며 이맥스를 켜고 싶다면.
+# --init-directory 옵션은 29.1 버전부터 지원
+emacs --init-directory=~/other_init_dir
 </code></pre>
 <ul>
 <li><code>.emacs.d/init.el</code>을 시작위치로, <code>.emacs.d/</code> 폴더를 github등을 이용해 버전관리해주면 좋습니다.</li>
@@ -770,6 +826,28 @@ emacs --no-init-file --load ~/other/init.el
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
 </ul>
+<h2 id="defun"><a class="header" href="#defun">defun</a></h2>
+<p><code>C-x f ~/.emacs.d/init.el</code>로 초기화 파일을 열어봅시다.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>defun</td><td>함수 정의</td></tr>
+<tr><td>interactive</td><td>함수를 <code>M-x</code>로 실행할 수 있게 함</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message &quot;Hello World&quot;))
+
+;; 다음 폼(form)을 평가하면 하단에 &quot;Hello World&quot;가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message &quot;Hello World&quot;))
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="패키지-관리자"><a class="header" href="#패키지-관리자">패키지 관리자</a></h1>
 <ul>
 <li><a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el">package.el 소스</a>

@@ -202,8 +202,12 @@
 <tr><td>--init-directory=폴더</td><td>init 폴더를 지정한 곳으로 설정가능</td></tr>
 </tbody></table>
 </div>
-<pre><code class="language-bash"># 예를들어 다른 위치에 있는 init.el을 로드하고 싶다면
+<pre><code class="language-bash"># init폴더 영향 없이 다른 위치에 있는 elisp만 로드
 emacs --no-init-file --load ~/other/init.el
+
+# 다른 위치에 있는 init 폴더로 초기화 하며 이맥스를 켜고 싶다면.
+# --init-directory 옵션은 29.1 버전부터 지원
+emacs --init-directory=~/other_init_dir
 </code></pre>
 <ul>
 <li><code>.emacs.d/init.el</code>을 시작위치로, <code>.emacs.d/</code> 폴더를 github등을 이용해 버전관리해주면 좋습니다.</li>
@@ -219,6 +223,28 @@ emacs --no-init-file --load ~/other/init.el
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
 </ul>
+<h2 id="defun"><a class="header" href="#defun">defun</a></h2>
+<p><code>C-x f ~/.emacs.d/init.el</code>로 초기화 파일을 열어봅시다.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>defun</td><td>함수 정의</td></tr>
+<tr><td>interactive</td><td>함수를 <code>M-x</code>로 실행할 수 있게 함</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message &quot;Hello World&quot;))
+
+;; 다음 폼(form)을 평가하면 하단에 &quot;Hello World&quot;가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message &quot;Hello World&quot;))
+</code></pre>
 
                     </main>
 
