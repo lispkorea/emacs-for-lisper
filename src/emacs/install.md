@@ -125,6 +125,10 @@ fc-cache  --force --verbose
 
 # fc-list : 폰트 목록 확인
 fc-list
+
+# fc-query : 폰트 정보 확인
+# download: https://raw.githubusercontent.com/kelvinks/D2Coding_Nerd/master/D2Coding%20v.1.3.2%20Nerd%20Font%20Complete.ttf
+fc-query ./D2Coding%20v.1.3.2%20Nerd%20Font%20Complete.ttf | grep family
 ```
 
 ## macOs
@@ -142,10 +146,15 @@ fc-list
 
 # git 설치
 brew install git
+# gnu-tar 설치
+brew install gnu-tar
 
 # font 설치
 brew tap homebrew/cask-fonts
 brew install font-d2coding-nerd-font
+
+# 기타 유틸들
+brew install ripgrep
 ```
 
 ``` sh
@@ -184,3 +193,19 @@ brew install emacs-plus@29 --with-native-comp
 ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 ```
 
+### macOs 락스크린 방지
+
+
+- `Control-Command-Q` : 화면 잠금 단축키가 할당되어 있다.
+- lisp-mode에선 `C-M-q`가 `indent-pp-sexp`로 할당되어 있다.
+  - `indent-pp-sexp`: 괄호로 묶여 있는 모든 줄을 재정렬한다.
+- 자주 쓰는 기능인데 단축키가 겹쳐 화면 잠금 단축키를 덮어 씌우는 편이 좋다.
+  - ` > 하단에보면 > 화면 잠금`이 있는데 이걸 다른키로 맵핑 시킬 것이다.
+  - ` > 시스템 설정 > 키보드 > 키보드 단축키... > 앱 단축키 > 모든 응용 프로그램 >  +`
+    - `메뉴 제목`에 `화면 잠금`을 입력한다. ( 눌러서 이름/띄어쓰기가 동일한지 확인)
+    - 원하는 단축키를 입력한다.
+
+
+## Ref
+
+- <https://github.com/syl20bnr/spacemacs>

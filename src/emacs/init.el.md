@@ -23,8 +23,12 @@ Emacs는 다음과 같은 시작 옵션을 제공합니다.
 
 
 ```bash
-# 예를들어 다른 위치에 있는 init.el을 로드하고 싶다면
+# init폴더 영향 없이 다른 위치에 있는 elisp만 로드
 emacs --no-init-file --load ~/other/init.el
+
+# 다른 위치에 있는 init 폴더로 초기화 하며 이맥스를 켜고 싶다면.
+# --init-directory 옵션은 29.1 버전부터 지원
+emacs --init-directory=~/other_init_dir
 ```
 
 - `.emacs.d/init.el`을 시작위치로, `.emacs.d/` 폴더를 github등을 이용해 버전관리해주면 좋습니다.
@@ -37,3 +41,29 @@ emacs --no-init-file --load ~/other/init.el
 - [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
 - [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)
 
+
+## defun
+
+`C-x f ~/.emacs.d/init.el`로 초기화 파일을 열어봅시다.
+
+|             |                                  |
+| ----------- | -------------------------------- |
+| defun       | 함수 정의                        |
+| interactive | 함수를 `M-x`로 실행할 수 있게 함 |
+
+``` lisp
+;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message "Hello World"))
+
+;; 다음 폼(form)을 평가하면 하단에 "Hello World"가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message "Hello World"))
+```

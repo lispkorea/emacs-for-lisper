@@ -2,32 +2,33 @@
 
 - [GNU Emacs Release History](https://www.gnu.org/software/emacs/history.html)
 
-| 버전 | 날짜       | 주요 변경사항                                             |
-| ---- | ---------- | --------------------------------------------------------- |
-| 30.1 | -          |                                                           |
-|      |            | use-package - :vc 키워드 지원                             |
-| 29.1 | 2023-07-30 |                                                           |
-|      |            | Tree-sitter                                               |
-|      |            | EGlot                                                     |
-|      |            | use-package                                               |
-|      |            | package-vc-install                                        |
-|      |            | --init-directory 옵션                                     |
-|      |            | M-x restart-emacs                                         |
-|      |            | linum-mode (elisp) => 사라짐                              |
-| 28.1 | 2022-04-04 |                                                           |
-|      |            | use-short-answers                                         |
-| 27.1 | 2020-08-10 |                                                           |
-|      |            | 렉시컬 바인딩(기본 활성화)                                |
-|      |            | cl =>  cl-lib                                             |
-| 26.1 | 2018-05-28 |                                                           |
-|      |            | M-x display-line-numbers-mode / (성능문제로 c언어로 작성) |
-|      |            | read-answer-short                                         |
-| 24.4 | 2014-10-20 |                                                           |
-|      |            | M-x prettify-symbols-mode                                 |
-| 24.1 | 2012-06-10 |                                                           |
-|      |            | package.el(기본 탑재)                                     |
-| 21.1 | 2001-10-28 |                                                           |
-|      |            | global-hl-line-mode                                       |
+| 버전 | 날짜       | 주목할만 변경사항                                             |
+| ---- | ---------- | ------------------------------------------------------------- |
+| 30.1 | -          |                                                               |
+|      |            | use-package - :vc 키워드 지원                                 |
+| 29.1 | 2023-07-30 |                                                               |
+|      |            | Tree-sitter                                                   |
+|      |            | EGlot                                                         |
+|      |            | 탑재: use-package                                             |
+|      |            | package-vc-install                                            |
+|      |            | M-x restart-emacs                                             |
+|      |            | 옵션: --init-directory                                        |
+|      |            | 사라짐: linum-mode (elisp로 작성된거라 느림)                  |
+| 28.1 | 2022-04-04 |                                                               |
+|      |            | use-short-answers                                             |
+| 27.1 | 2020-08-10 |                                                               |
+|      |            | 기본 활성화: 렉시컬 바인딩                                    |
+|      |            | 이름변경: cl =>  cl-lib                                       |
+| 26.1 | 2018-05-28 |                                                               |
+|      |            | M-x display-line-numbers-mode / (속도향상위해 c언어로 작성됨) |
+|      |            | read-answer-short                                             |
+| 24.4 | 2014-10-20 |                                                               |
+|      |            | M-x prettify-symbols-mode                                     |
+| 24.1 | 2012-06-10 |                                                               |
+|      |            | 탑재: package.el                                              |
+|      |            | prog-mode                                                     |
+| 21.1 | 2001-10-28 |                                                               |
+|      |            | global-hl-line-mode                                           |
 
 ## emacs-mirror
 

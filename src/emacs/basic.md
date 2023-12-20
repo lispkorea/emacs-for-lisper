@@ -14,13 +14,6 @@
 | 상하좌우 | <up>/<down>/<left>/<right> |
 | 마우스   | <mouse-1>                  |
 
-- ref: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html>
-
-| 설명    | 단축키 | 함수                 |
-| ------- | ------ | -------------------- |
-| 키 확인 | C-h c  | describe-key-briefly |
-
-
 ## 필수 조작법
 
 | 필수        | 단축키     |
@@ -92,6 +85,19 @@
 | 바꾸기             | M-%    |
 | 바꾸기(정규표현식) | C-M-%  |
 
+### 헬프
+
+- ref: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html>
+
+| 설명            | 단축키 | 함수                 |
+| --------------- | ------ | -------------------- |
+| 키 확인(간단히) | C-h c  | describe-key-briefly |
+| 키 확인(자세히) | C-h k  | describe-key         |
+| 정보보기        | C-h i  | info                 |
+
+  
+- `C-h i m Elisp RET` : [GNU Emacs Lisp Reference Manual](https://www.gnu.org/software/emacs/manual/elisp.html)
+- `C-h i m Emacs Lisp Intro RET` : [An Introduction to Programming in Emacs Lisp](https://www.gnu.org/software/emacs/manual/eintr.html)
 
 ## shell
 
@@ -142,7 +148,7 @@
 (display-time-mode -1) ; 시간 끄기 (0포함 음수면 끄기)
 ```
 
-### 예
+### 예)
 
 - elisp파일을 열고 `M-x prettify-symbols-mode RET`으로 한 다음,
 - `M-x describe-mode RET`를 입력하면 매이저/마이너 모드를 확인 할 수 있습니다.
@@ -151,7 +157,7 @@
 
 ``` lisp
 ;; emacs-lisp-mode는 lisp-data-mode를
-;; lisp-data-mode는 prog-mode를
+;; lisp-data-mode는 prog-mode(programming mode)를
 ;; prog-mode는 fundamental-mode를 상속받고 있습니다.
 
 ;; emacs-lisp-mode

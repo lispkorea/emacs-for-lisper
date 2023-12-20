@@ -1,7 +1,8 @@
 # elisp
 
 - [메뉴얼](https://www.gnu.org/software/emacs/manual/elisp.html)
-
+- [스타일가이드](https://github.com/bbatsov/emacs-lisp-style-guide)
+- [emacsdocs: elisp](https://emacsdocs.org/docs/elisp/Emacs-Lisp)
 
 ## ielm
 
@@ -17,6 +18,11 @@ IELM(`I`nteractive `E`macs `L`isp `M`ode)
 | 모드확인  |        | describe-mode     |
 | 변수설명  |        | describe-variable |
 | 함수설명  |        | describe-function |
+
+| .el 파일에서                      | 단축키 | 함수           |
+| --------------------------------- | ------ | -------------- |
+| form 평가                         | C-M-x  | eval-defun     |
+| 괄호로 묶여 있는 모든 줄을 재정렬 | C-M-q  | indent-pp-sexp |
 
 ## 컴파일
 
