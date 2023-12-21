@@ -197,6 +197,7 @@
 <tr><td><strong>중단</strong></td><td><code>C-g</code></td></tr>
 <tr><td>파일 열기</td><td>C-x C-f</td></tr>
 <tr><td>저장하기</td><td>C-x C-s</td></tr>
+<tr><td>저장하기(다른이름)</td><td>C-x C-w</td></tr>
 <tr><td>종료</td><td>C-x C-c</td></tr>
 <tr><td>명령어 실행</td><td>M-x 명령어</td></tr>
 </tbody></table>
@@ -228,10 +229,10 @@
 </div>
 <h3 id="복사-붙여넣기-되돌리기"><a class="header" href="#복사-붙여넣기-되돌리기">복사, 붙여넣기, 되돌리기</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>복사, 붙여넣기, 되돌리기</th><th>단축키</th></tr></thead><tbody>
-<tr><td>마크 설정</td><td>C-<code>&lt;SPC&gt;</code></td></tr>
-<tr><td>마크 전체</td><td>C-x h</td></tr>
-<tr><td>마크된 영역 <code>복사</code></td><td>M-w</td></tr>
-<tr><td>마크된 영역 <code>잘라내기</code></td><td>C-w</td></tr>
+<tr><td>마크: 설정</td><td>C-<code>&lt;SPC&gt;</code></td></tr>
+<tr><td>마크: 전체</td><td>C-x h</td></tr>
+<tr><td>마크: <code>복사</code></td><td>M-w</td></tr>
+<tr><td>마크: <code>잘라내기</code></td><td>C-w</td></tr>
 <tr><td><code>붙여넣기</code></td><td>C-y</td></tr>
 <tr><td><code>되돌리기</code></td><td>C-x u</td></tr>
 <tr><td><code>되돌리기</code></td><td>C-/</td></tr>
@@ -259,9 +260,13 @@
 <li>ref: <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html</a></li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th>설명</th><th>단축키</th><th>함수</th></tr></thead><tbody>
+<tr><td>정보보기</td><td>C-h i</td><td>info</td></tr>
 <tr><td>키 확인(간단히)</td><td>C-h c</td><td>describe-key-briefly</td></tr>
 <tr><td>키 확인(자세히)</td><td>C-h k</td><td>describe-key</td></tr>
-<tr><td>정보보기</td><td>C-h i</td><td>info</td></tr>
+<tr><td>최근에 입력한 키 보기</td><td>C-h l   혹은 <f1> l</td><td></td></tr>
+<tr><td>단축키 보기(모두)</td><td>C-h b</td><td></td></tr>
+<tr><td>단축키 보기(C-x로 시작하는 것만)</td><td>C-x C-h 혹은 C-x <f1></td><td></td></tr>
+<tr><td>단축키 보기(사용자 정의)</td><td>C-c C-h 혹은 C-c <f1></td><td></td></tr>
 </tbody></table>
 </div>
 <ul>
