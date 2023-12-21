@@ -37,20 +37,19 @@ emacs --init-directory=~/other_init_dir
   - 다만, 설정파일을 org로 다루는 것은 호불호가 갈리고, 무엇보다도 org를 다루기에는 너무나 방대합니다.
   - 따라서, **여기서 Org는 다루지 않겠습니다**.
 
-## 참고
+## init.el
 
-- [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
-- [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)
+설명하기 편하게 시작폴더를 `~/.emacs.d/`로 가정하겠습니다.
 
-## use-package
+- `~/.emacs.d/init.el`에는 다음과 같은 일을 할 것입니다.
+  - `package.el`와 `use-package`를 이용해 패키지를 받을 저장소를 지정합니다.
+  - `init-loader`를 이용해 초기화 파일을 관리합니다.
 
-Emacs 29.1(2023-07-30)부터 기본 탑재되는 패키지 매니저입니다.
+## package
 
-- 참고
-  - [저장소](https://github.com/jwiegley/use-package)
-  - [홈페이지](https://jwiegley.github.io/use-package/keywords/)
-  - [emacs: package.el](https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el)
-  - [emacs: manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html)
+- [Package Manager](packagemanager.md) 참고
+  - package.el: Emacs 24.1(2012-06-10)
+  - use-package: Emacs 29.1(2023-07-30)
 - Package Archive
   - elpa(`E`macs `L`isp `P`ackage `A`rchive)
   - melpa(`M`ilkypostman `E`macs `L`isp `P`ackage `A`rchive)
@@ -126,3 +125,8 @@ Emacs 29.1(2023-07-30)부터 기본 탑재되는 패키지 매니저입니다.
   ;; (setq init-loader-byte-compile t)
   (init-loader-load))
 ```
+
+## 참고
+
+- [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
+- [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)
