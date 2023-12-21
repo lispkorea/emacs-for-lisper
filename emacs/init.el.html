@@ -219,20 +219,22 @@ emacs --init-directory=~/other_init_dir
 </ul>
 </li>
 </ul>
-<h2 id="참고"><a class="header" href="#참고">참고</a></h2>
+<h2 id="initel-1"><a class="header" href="#initel-1">init.el</a></h2>
+<p>설명하기 편하게 시작폴더를 <code>~/.emacs.d/</code>로 가정하겠습니다.</p>
 <ul>
-<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
-<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
+<li><code>~/.emacs.d/init.el</code>에는 다음과 같은 일을 할 것입니다.
+<ul>
+<li><code>package.el</code>와 <code>use-package</code>를 이용해 패키지를 받을 저장소를 지정합니다.</li>
+<li><code>init-loader</code>를 이용해 초기화 파일을 관리합니다.</li>
 </ul>
-<h2 id="use-package"><a class="header" href="#use-package">use-package</a></h2>
-<p>Emacs 29.1(2023-07-30)부터 기본 탑재되는 패키지 매니저입니다.</p>
+</li>
+</ul>
+<h2 id="package"><a class="header" href="#package">package</a></h2>
 <ul>
-<li>참고
+<li><a href="packagemanager.html">Package Manager</a> 참고
 <ul>
-<li><a href="https://github.com/jwiegley/use-package">저장소</a></li>
-<li><a href="https://jwiegley.github.io/use-package/keywords/">홈페이지</a></li>
-<li><a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el">emacs: package.el</a></li>
-<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html">emacs: manual</a></li>
+<li>package.el: Emacs 24.1(2012-06-10)</li>
+<li>use-package: Emacs 29.1(2023-07-30)</li>
 </ul>
 </li>
 <li>Package Archive
@@ -313,6 +315,11 @@ emacs --init-directory=~/other_init_dir
   ;; (setq init-loader-byte-compile t)
   (init-loader-load))
 </code></pre>
+<h2 id="참고"><a class="header" href="#참고">참고</a></h2>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
+</ul>
 
                     </main>
 
