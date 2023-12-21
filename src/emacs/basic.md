@@ -16,13 +16,14 @@
 
 ## 필수 조작법
 
-| 필수        | 단축키     |
-| ----------- | ---------- |
-| **중단**    | `C-g`      |
-| 파일 열기   | C-x C-f    |
-| 저장하기    | C-x C-s    |
-| 종료        | C-x C-c    |
-| 명령어 실행 | M-x 명령어 |
+| 필수               | 단축키     |
+| ------------------ | ---------- |
+| **중단**           | `C-g`      |
+| 파일 열기          | C-x C-f    |
+| 저장하기           | C-x C-s    |
+| 저장하기(다른이름) | C-x C-w    |
+| 종료               | C-x C-c    |
+| 명령어 실행        | M-x 명령어 |
 
 
 ## 이동
@@ -58,10 +59,10 @@
 
 | 복사, 붙여넣기, 되돌리기 | 단축키    |
 | ------------------------ | --------- |
-| 마크 설정                | C-`<SPC>` |
-| 마크 전체                | C-x h     |
-| 마크된 영역 `복사`       | M-w       |
-| 마크된 영역 `잘라내기`   | C-w       |
+| 마크: 설정               | C-`<SPC>` |
+| 마크: 전체               | C-x h     |
+| 마크: `복사`             | M-w       |
+| 마크: `잘라내기`         | C-w       |
 | `붙여넣기`               | C-y       |
 | `되돌리기`               | C-x u     |
 | `되돌리기`               | C-/       |
@@ -89,12 +90,15 @@
 
 - ref: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Help.html>
 
-| 설명            | 단축키 | 함수                 |
-| --------------- | ------ | -------------------- |
-| 키 확인(간단히) | C-h c  | describe-key-briefly |
-| 키 확인(자세히) | C-h k  | describe-key         |
-| 정보보기        | C-h i  | info                 |
-
+| 설명                             | 단축키                | 함수                 |
+| -------------------------------- | --------------------- | -------------------- |
+| 정보보기                         | C-h i                 | info                 |
+| 키 확인(간단히)                  | C-h c                 | describe-key-briefly |
+| 키 확인(자세히)                  | C-h k                 | describe-key         |
+| 최근에 입력한 키 보기            | C-h l   혹은 <f1> l   |                      |
+| 단축키 보기(모두)                | C-h b                 |                      |
+| 단축키 보기(C-x로 시작하는 것만) | C-x C-h 혹은 C-x <f1> |                      |
+| 단축키 보기(사용자 정의)         | C-c C-h 혹은 C-c <f1> |                      |
   
 - `C-h i m Elisp RET` : [GNU Emacs Lisp Reference Manual](https://www.gnu.org/software/emacs/manual/elisp.html)
 - `C-h i m Emacs Lisp Intro RET` : [An Introduction to Programming in Emacs Lisp](https://www.gnu.org/software/emacs/manual/eintr.html)
