@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html" class="active">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../emacs/basic.html" class="active">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../emacs/init.el.html">init.el</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../emacs/inits/0100_lisp-mode.el.html">0100_lisp-mode.el</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -350,6 +350,28 @@
 
 ;; prettify-symbols-mode를 활성시켰으므로
 ;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
+</code></pre>
+<h2 id="defun"><a class="header" href="#defun">defun</a></h2>
+<p><code>C-x f hello.el</code>로 초기화 파일을 열어봅시다.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>defun</td><td>함수 정의</td></tr>
+<tr><td>interactive</td><td>함수를 <code>M-x</code>로 실행할 수 있게 함</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message &quot;Hello World&quot;))
+
+;; 다음 폼(form)을 평가하면 하단에 &quot;Hello World&quot;가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message &quot;Hello World&quot;))
 </code></pre>
 <h2 id="참고"><a class="header" href="#참고">참고</a></h2>
 <ul>

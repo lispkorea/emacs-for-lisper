@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li class="chapter-item expanded affix "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="emacs/init.el.html">init.el</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="emacs/inits/0100_lisp-mode.el.html">0100_lisp-mode.el</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -460,6 +460,8 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 <tr><td>24.1</td><td>2012-06-10</td><td></td></tr>
 <tr><td></td><td></td><td>탑재: package.el</td></tr>
 <tr><td></td><td></td><td>prog-mode</td></tr>
+<tr><td>22.1</td><td>2007-06-02</td><td></td></tr>
+<tr><td></td><td></td><td>ibuffer</td></tr>
 <tr><td>21.1</td><td>2001-10-28</td><td></td></tr>
 <tr><td></td><td></td><td>global-hl-line-mode</td></tr>
 </tbody></table>
@@ -666,6 +668,28 @@ ln -s /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications
 ;; prettify-symbols-mode를 활성시켰으므로
 ;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
 </code></pre>
+<h2 id="defun"><a class="header" href="#defun">defun</a></h2>
+<p><code>C-x f hello.el</code>로 초기화 파일을 열어봅시다.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>defun</td><td>함수 정의</td></tr>
+<tr><td>interactive</td><td>함수를 <code>M-x</code>로 실행할 수 있게 함</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message &quot;Hello World&quot;))
+
+;; 다음 폼(form)을 평가하면 하단에 &quot;Hello World&quot;가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message &quot;Hello World&quot;))
+</code></pre>
 <h2 id="참고"><a class="header" href="#참고">참고</a></h2>
 <ul>
 <li><a href="https://github.com/emacs-mirror/emacs/blob/master/etc/tutorials/TUTORIAL.ko">TUTORIAL.ko</a></li>
@@ -782,11 +806,12 @@ nil
 (2 3)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="initel"><a class="header" href="#initel">init.el</a></h1>
-<p>Emacs가 시작될 때, 초기화 파일을 로드합니다. 초기화 파일은 <code>~/.emacs.el</code>, <code>~/.emacs</code>, <code>~/.emacs.d/init.el</code> 중 하나를 사용합니다.</p>
-<div class="table-wrapper"><table><thead><tr><th>파일명</th></tr></thead><tbody>
-<tr><td>~/.emacs.el</td></tr>
-<tr><td>~/.emacs</td></tr>
-<tr><td>~/.emacs.d/init.el</td></tr>
+<p>Emacs가 시작될 때, 초기화 파일을 로드합니다.</p>
+<div class="table-wrapper"><table><thead><tr><th>파일명</th><th></th></tr></thead><tbody>
+<tr><td>~/.emacs.el</td><td>안쓰는게 좋음.</td></tr>
+<tr><td>~/.emacs</td><td>안쓰는게 좋음.</td></tr>
+<tr><td>~/.emacs.d/init.el</td><td>Windows, macOs에 추천</td></tr>
+<tr><td>~/.config/emacs/init.el</td><td>Linux에 추천</td></tr>
 </tbody></table>
 </div>
 <ul>
@@ -826,27 +851,120 @@ emacs --init-directory=~/other_init_dir
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">emacs: Init-File.html</a></li>
 <li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">emacs: Find-Init.html</a></li>
 </ul>
-<h2 id="defun"><a class="header" href="#defun">defun</a></h2>
-<p><code>C-x f ~/.emacs.d/init.el</code>로 초기화 파일을 열어봅시다.</p>
-<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>defun</td><td>함수 정의</td></tr>
-<tr><td>interactive</td><td>함수를 <code>M-x</code>로 실행할 수 있게 함</td></tr>
+<h2 id="use-package"><a class="header" href="#use-package">use-package</a></h2>
+<p>Emacs 29.1(2023-07-30)부터 기본 탑재되는 패키지 매니저입니다.</p>
+<ul>
+<li>참고
+<ul>
+<li><a href="https://github.com/jwiegley/use-package">저장소</a></li>
+<li><a href="https://jwiegley.github.io/use-package/keywords/">홈페이지</a></li>
+<li><a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el">emacs: package.el</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html">emacs: manual</a></li>
+</ul>
+</li>
+<li>Package Archive
+<ul>
+<li>elpa(<code>E</code>macs <code>L</code>isp <code>P</code>ackage <code>A</code>rchive)</li>
+<li>melpa(<code>M</code>ilkypostman <code>E</code>macs <code>L</code>isp <code>P</code>ackage <code>A</code>rchive)</li>
+</ul>
+</li>
+<li>미러
+<ul>
+<li><a href="https://www.mirrorservice.org/">미러: 칸트대학</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/elpa/">미러: 칭화대학</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-lisp">(use-package package
+  ;; 
+  ;; ref: https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
+  ;; 
+  ;; elpa(`E`macs `L`isp `P`ackage `A`rchive)
+  ;; melpa(`M`ilkypostman `E`macs `L`isp `P`ackage `A`rchive)
+  ;; 
+  ;; elpa(gnu): https://elpa.gnu.org/
+  ;; elpa(nognu): https://elpa.nongnu.org/
+  ;; melpa: http://melpa.org/
+  ;; melpa(stable): http://stable.melpa.org/
+  ;; 미러 칸트대학: https://www.mirrorservice.org/
+  ;; 미러 칭화대학: https://mirrors.tuna.tsinghua.edu.cn/help/elpa/
+  :config
+  (progn ;; `elpa'
+    (defconst PACKAGE_ELPA_GNU
+      '(&quot;gnu&quot; . &quot;https://elpa.gnu.org/packages/&quot;))
+    (defconst PACKAGE_ELPA_NOGNU
+      '(&quot;nongnu&quot; . &quot;https://elpa.nongnu.org/nongnu/&quot;)))
+  (progn ;; `melpa'
+    (defconst PACKAGE_MELPA
+      '(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;))
+    (defconst PACKAGE_MELPA_STABLE
+      '(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;)))
+  (progn ;; `mirrorservice'
+    (defconst PACKAGE_MIRRORSERVICE_MELPA
+      '(&quot;melpa&quot; . &quot;http://www.mirrorservice.org/sites/melpa.org/packages/&quot;))
+    (defconst PACKAGE_MIRRORSERVICE_MELPA_STABLE
+      '(&quot;melpa-stable&quot; . &quot;http://www.mirrorservice.org/sites/stable.melpa.org/packages/&quot;)))
+  (progn ;; `tsinghua'
+    (defconst PACKAGE_TSINGHUA_GNU
+      '(&quot;gnu&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/&quot;))
+    (defconst PACKAGE_TSINGHUA_NOGNU
+      '(&quot;nognu&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/&quot;))
+    (defconst PACKAGE_TSINGHUA_MELPA
+      '(&quot;melpa-cn&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&quot;))
+    (defconst PACKAGE_TSINGHUA_MELPA_STABLE
+      '(&quot;melpa-stable-cn&quot; . &quot;http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/&quot;)))
+
+  (setq package-archives
+	`(,PACKAGE_TSINGHUA_GNU
+	  ,PACKAGE_TSINGHUA_NOGNU
+	  ,PACKAGE_TSINGHUA_MELPA
+	  ,PACKAGE_TSINGHUA_MELPA_STABLE
+          )))
+</code></pre>
+<h2 id="init-loader"><a class="header" href="#init-loader">init-loader</a></h2>
+<ul>
+<li><a href="https://github.com/emacs-jp/init-loader/">emacs-jp/init-loader</a></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>elisp</th><th>설명</th></tr></thead><tbody>
+<tr><td>init-loader-directory</td><td>초기화 파일이 있는 폴더</td></tr>
 </tbody></table>
 </div>
-<pre><code class="language-lisp">;; init.el --- Emacs configuration
-;; `C-M-x` 평가하기
-
-;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
-(defun hello ()
-  (message &quot;Hello World&quot;))
-
-;; 다음 폼(form)을 평가하면 하단에 &quot;Hello World&quot;가 출력됩니다.
-(hello)
-
-;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
-(defun hello ()
-  (interactive)
-  (message &quot;Hello World&quot;))
+<pre><code class="language-lisp">(use-package init-loader
+  :ensure t
+  :init
+  (let* ((my-inits-dir (concat user-emacs-directory &quot;inits&quot;)))
+    (unless (file-exists-p my-inits-dir)
+      (make-directory my-inits-dir t))
+    (setq init-loader-directory my-inits-dir))
+  ;; (setq init-loader-byte-compile t)
+  (init-loader-load))
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inits0100_lisp-modeel"><a class="header" href="#inits0100_lisp-modeel">inits/0100_lisp-mode.el</a></h1>
+<ul>
+<li>lisp-mode</li>
+<li>imenu</li>
+<li>prettify-symbols-mode</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>elisp</th><th>설명</th></tr></thead><tbody>
+<tr><td>buffer-file-name</td><td>현재버퍼 파일의 이름</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-lisp">(use-package lisp-mode
+  :bind
+  ((&quot;C-c C-l&quot; . (lambda () (interactive) (load-file buffer-file-name)))
+   (&quot;C-c C-z&quot; . ielm))
+  :config
+  (add-hook 'emacs-lisp-mode-hook
+	    #'eldoc-mode)
+  (add-hook 'emacs-lisp-mode-hook
+	    #'(lambda () (imenu-add-to-menubar &quot;@Index&quot;)))
+  (add-hook 'emacs-lisp-mode-hook
+	    #'prettify-symbols-mode)
+  (add-hook 'lisp-interaction-mode-hook
+	    #'eldoc-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook
+	    #'eldoc-mode))
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="패키지-관리자"><a class="header" href="#패키지-관리자">패키지 관리자</a></h1>
 <ul>
