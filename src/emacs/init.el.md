@@ -1,12 +1,13 @@
 # init.el
 
-Emacs가 시작될 때, 초기화 파일을 로드합니다. 초기화 파일은 `~/.emacs.el`, `~/.emacs`, `~/.emacs.d/init.el` 중 하나를 사용합니다.
+Emacs가 시작될 때, 초기화 파일을 로드합니다.
 
-| 파일명             |
-| ------------------ |
-| ~/.emacs.el        |
-| ~/.emacs           |
-| ~/.emacs.d/init.el |
+| 파일명                  |                       |
+| ----------------------- | --------------------- |
+| ~/.emacs.el             | 안쓰는게 좋음.        |
+| ~/.emacs                | 안쓰는게 좋음.        |
+| ~/.emacs.d/init.el      | Windows, macOs에 추천 |
+| ~/.config/emacs/init.el | Linux에 추천          |
 
 - 변수 `user-emacs-directory`는 초기화 파일이 있는 폴더 명시합니다.
   - ex) "~/.emacs.d/"
@@ -41,29 +42,87 @@ emacs --init-directory=~/other_init_dir
 - [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
 - [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)
 
+## use-package
 
-## defun
+Emacs 29.1(2023-07-30)부터 기본 탑재되는 패키지 매니저입니다.
 
-`C-x f ~/.emacs.d/init.el`로 초기화 파일을 열어봅시다.
-
-|             |                                  |
-| ----------- | -------------------------------- |
-| defun       | 함수 정의                        |
-| interactive | 함수를 `M-x`로 실행할 수 있게 함 |
+- 참고
+  - [저장소](https://github.com/jwiegley/use-package)
+  - [홈페이지](https://jwiegley.github.io/use-package/keywords/)
+  - [emacs: package.el](https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el)
+  - [emacs: manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html)
+- Package Archive
+  - elpa(`E`macs `L`isp `P`ackage `A`rchive)
+  - melpa(`M`ilkypostman `E`macs `L`isp `P`ackage `A`rchive)
+- 미러
+  - [미러: 칸트대학](https://www.mirrorservice.org/)
+  - [미러: 칭화대학](https://mirrors.tuna.tsinghua.edu.cn/help/elpa/)
 
 ``` lisp
-;; init.el --- Emacs configuration
-;; `C-M-x` 평가하기
+(use-package package
+  ;; 
+  ;; ref: https://github.com/emacs-mirror/emacs/blob/master/lisp/emacs-lisp/package.el
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
+  ;; 
+  ;; elpa(`E`macs `L`isp `P`ackage `A`rchive)
+  ;; melpa(`M`ilkypostman `E`macs `L`isp `P`ackage `A`rchive)
+  ;; 
+  ;; elpa(gnu): https://elpa.gnu.org/
+  ;; elpa(nognu): https://elpa.nongnu.org/
+  ;; melpa: http://melpa.org/
+  ;; melpa(stable): http://stable.melpa.org/
+  ;; 미러 칸트대학: https://www.mirrorservice.org/
+  ;; 미러 칭화대학: https://mirrors.tuna.tsinghua.edu.cn/help/elpa/
+  :config
+  (progn ;; `elpa'
+    (defconst PACKAGE_ELPA_GNU
+      '("gnu" . "https://elpa.gnu.org/packages/"))
+    (defconst PACKAGE_ELPA_NOGNU
+      '("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+  (progn ;; `melpa'
+    (defconst PACKAGE_MELPA
+      '("melpa" . "http://melpa.org/packages/"))
+    (defconst PACKAGE_MELPA_STABLE
+      '("melpa-stable" . "http://stable.melpa.org/packages/")))
+  (progn ;; `mirrorservice'
+    (defconst PACKAGE_MIRRORSERVICE_MELPA
+      '("melpa" . "http://www.mirrorservice.org/sites/melpa.org/packages/"))
+    (defconst PACKAGE_MIRRORSERVICE_MELPA_STABLE
+      '("melpa-stable" . "http://www.mirrorservice.org/sites/stable.melpa.org/packages/")))
+  (progn ;; `tsinghua'
+    (defconst PACKAGE_TSINGHUA_GNU
+      '("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/"))
+    (defconst PACKAGE_TSINGHUA_NOGNU
+      '("nognu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/"))
+    (defconst PACKAGE_TSINGHUA_MELPA
+      '("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
+    (defconst PACKAGE_TSINGHUA_MELPA_STABLE
+      '("melpa-stable-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
 
-;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
-(defun hello ()
-  (message "Hello World"))
+  (setq package-archives
+	`(,PACKAGE_TSINGHUA_GNU
+	  ,PACKAGE_TSINGHUA_NOGNU
+	  ,PACKAGE_TSINGHUA_MELPA
+	  ,PACKAGE_TSINGHUA_MELPA_STABLE
+          )))
+```
 
-;; 다음 폼(form)을 평가하면 하단에 "Hello World"가 출력됩니다.
-(hello)
+## init-loader
 
-;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
-(defun hello ()
-  (interactive)
-  (message "Hello World"))
+- [emacs-jp/init-loader](https://github.com/emacs-jp/init-loader/)
+
+| elisp                 | 설명                    |
+| --------------------- | ----------------------- |
+| init-loader-directory | 초기화 파일이 있는 폴더 |
+
+``` lisp
+(use-package init-loader
+  :ensure t
+  :init
+  (let* ((my-inits-dir (concat user-emacs-directory "inits")))
+    (unless (file-exists-p my-inits-dir)
+      (make-directory my-inits-dir t))
+    (setq init-loader-directory my-inits-dir))
+  ;; (setq init-loader-byte-compile t)
+  (init-loader-load))
 ```

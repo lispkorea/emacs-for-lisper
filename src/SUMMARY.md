@@ -14,6 +14,7 @@
 
 - [elisp 설정](emacs/elisp.md)
 - [init.el](emacs/init.el.md)
+  - [0100_lisp-mode.el](emacs/inits/0100_lisp-mode.el.md)
 
 # ==패키지
 

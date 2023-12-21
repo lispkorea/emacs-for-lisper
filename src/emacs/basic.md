@@ -174,6 +174,32 @@
 ;; emacs-lisp-mode인 .el파일에서 lambda를 입력하면 λ로 바뀐다.
 ```
 
+## defun
+
+`C-x f hello.el`로 초기화 파일을 열어봅시다.
+
+|             |                                  |
+| ----------- | -------------------------------- |
+| defun       | 함수 정의                        |
+| interactive | 함수를 `M-x`로 실행할 수 있게 함 |
+
+``` lisp
+;; init.el --- Emacs configuration
+;; `C-M-x` 평가하기
+
+;; 다음 함수를 작성하여 함수를 평가하여 정의합니다.
+(defun hello ()
+  (message "Hello World"))
+
+;; 다음 폼(form)을 평가하면 하단에 "Hello World"가 출력됩니다.
+(hello)
+
+;; (interactive)를 추가하면, `M-x hello`로 함수를 실행할 수 있습니다.
+(defun hello ()
+  (interactive)
+  (message "Hello World"))
+```
+
 
 ## 참고
 
