@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>0100_lisp-mode.el - 리스퍼를 위한 이맥스</title>
+        <title>2000_emacs-lisp-mode.el - 리스퍼를 위한 이맥스</title>
 
 
         <!-- Custom HTML head -->
@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../favicon.svg">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -34,7 +34,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "../../";
+            var path_to_root = "../../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../../emacs/init.el.html">init.el</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../emacs/inits/0100_lisp-mode.el.html" class="active">0100_lisp-mode.el</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../../clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../../../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../../../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../../../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../../../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../../../emacs/mode.html">모드</a></li><li class="chapter-item expanded "><a href="../../../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/emacs.d.html">.emacs.d/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/gitignore.html">.gitignore</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits.html">inits/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0000_define.el.html">0000_define.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0010_base-setting.el.html">0010_base-setting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0011_macos.el.html">0011_macos.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1000_visual.el.html">1000_visual.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1001_navigation.el.html">1001_navigation.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1002_editting.el.html">1002_editting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/2000_emacs-lisp-mode.el.html" class="active">2000_emacs-lisp-mode.el</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../../../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../../../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li class="chapter-item expanded "><a href="../../../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../../../commonlisp/sly.html">Sly</a></li><li class="chapter-item expanded affix "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../../../racket/Racket.html">Racket 설정</a></li><li class="chapter-item expanded affix "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../../../clojure/Clojure.html">Clojure 설정</a></li><li class="chapter-item expanded "><a href="../../../clojure/cider.html">cider</a></li><li class="chapter-item expanded affix "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../../../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../../misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -143,13 +143,13 @@
                     <h1 class="menu-title">리스퍼를 위한 이맥스</h1>
 
                     <div class="right-buttons">
-                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/lispkorea/emacs-for-lisper" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/inits/0100_lisp-mode.el.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/emacs.d/inits/2000_emacs-lisp-mode.el.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -178,7 +178,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="inits0100_lisp-modeel"><a class="header" href="#inits0100_lisp-modeel">inits/0100_lisp-mode.el</a></h1>
+                        <h1 id="inits2000_emacs-lisp-modeel"><a class="header" href="#inits2000_emacs-lisp-modeel">inits/2000_emacs-lisp-mode.el</a></h1>
 <ul>
 <li>lisp-mode</li>
 <li>imenu</li>
@@ -188,17 +188,20 @@
 <tr><td>buffer-file-name</td><td>현재버퍼 파일의 이름</td></tr>
 </tbody></table>
 </div>
-<pre><code class="language-lisp">(use-package lisp-mode
+<pre><code class="language-lisp">(use-package emacs-lisp-mode
   :bind
   ((&quot;C-c C-l&quot; . (lambda () (interactive) (load-file buffer-file-name)))
    (&quot;C-c C-z&quot; . ielm))
   :config
   (add-hook 'emacs-lisp-mode-hook
 	    #'eldoc-mode)
+  ;; ref: imenu - https://www.gnu.org/software/emacs/manual/html_node/emacs/Imenu.html
   (add-hook 'emacs-lisp-mode-hook
 	    #'(lambda () (imenu-add-to-menubar &quot;@Index&quot;)))
+  ;; ref: prettify-symbols-mode - prog-mode.el
   (add-hook 'emacs-lisp-mode-hook
 	    #'prettify-symbols-mode)
+  ;; ref: inferior-emacs-lisp-mode &quot;버퍼: *ielm*&quot;
   (add-hook 'lisp-interaction-mode-hook
 	    #'eldoc-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook
@@ -209,11 +212,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../emacs/init.el.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../../emacs/emacs.d/inits/1002_editting.el.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../emacs/packagemanager.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../../emacs/packagemanager.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -223,11 +226,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../emacs/init.el.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../../emacs/emacs.d/inits/1002_editting.el.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../emacs/packagemanager.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../../emacs/packagemanager.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -242,13 +245,13 @@
         </script>
 
 
-        <script src="../../elasticlunr.min.js"></script>
-        <script src="../../mark.min.js"></script>
-        <script src="../../searcher.js"></script>
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
 
-        <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
-        <script src="../../book.js"></script>
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
 
         <!-- Custom JS scripts -->
 
