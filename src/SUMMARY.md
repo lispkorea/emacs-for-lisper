@@ -36,17 +36,18 @@
 # ==Common Lisp
 
 - [Common Lisp 설정](commonlisp/CommonLisp.md)
-- [Slime](commonlisp/slime.md)
-- [Sly](commonlisp/sly.md)
+  - [Slime](commonlisp/slime.md)
+  - [Sly](commonlisp/sly.md)
 
 # ==Racket
 
 - [Racket 설정](racket/Racket.md)
+  - [racket-mode](racket/racket-mode.md)
 
 # ==Clojure
 
 - [Clojure 설정](clojure/Clojure.md)
-- [cider](clojure/cider.md)
+  - [cider](clojure/cider.md)
 
 # ==Etc
 
