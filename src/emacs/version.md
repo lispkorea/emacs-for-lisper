@@ -1,36 +1,46 @@
 # 버전
 
 - [GNU Emacs Release History](https://www.gnu.org/software/emacs/history.html)
+- [wiki: EmacsReleaseDates](https://www.emacswiki.org/emacs/EmacsReleaseDates)
 
-| 버전 | 날짜       | 주목할만 변경사항                                             |
-| ---- | ---------- | ------------------------------------------------------------- |
-| 30.1 | -          |                                                               |
-|      |            | use-package - :vc 키워드 지원                                 |
-| 29.1 | 2023-07-30 |                                                               |
-|      |            | Tree-sitter                                                   |
-|      |            | EGlot                                                         |
-|      |            | 탑재: use-package                                             |
-|      |            | package-vc-install                                            |
-|      |            | M-x restart-emacs                                             |
-|      |            | 옵션: --init-directory                                        |
-|      |            | 사라짐: linum-mode (elisp로 작성된거라 느림)                  |
-| 28.1 | 2022-04-04 |                                                               |
-|      |            | use-short-answers                                             |
-| 27.1 | 2020-08-10 |                                                               |
-|      |            | 기본 활성화: 렉시컬 바인딩                                    |
-|      |            | 이름변경: cl =>  cl-lib                                       |
-| 26.1 | 2018-05-28 |                                                               |
-|      |            | M-x display-line-numbers-mode / (속도향상위해 c언어로 작성됨) |
-|      |            | read-answer-short                                             |
-| 24.4 | 2014-10-20 |                                                               |
-|      |            | M-x prettify-symbols-mode                                     |
-| 24.1 | 2012-06-10 |                                                               |
-|      |            | 탑재: package.el                                              |
-|      |            | prog-mode                                                     |
-| 22.1 | 2007-06-02 |                                                               |
-|      |            | ibuffer                                                       |
-| 21.1 | 2001-10-28 |                                                               |
-|      |            | global-hl-line-mode                                           |
+| 버전 | 날짜       | 주목할만 변경사항                                               |
+| ---- | ---------- | --------------------------------------------------------------- |
+| 30.1 | -          |                                                                 |
+|      |            | 추가: use-package - :vc 키워드 지원                             |
+| 29.1 | 2023-07-30 |                                                                 |
+|      |            | 추가: Tree-sitter                                               |
+|      |            | 추가: EGlot                                                     |
+|      |            | 추가: use-package                                               |
+|      |            | 추가: package-vc-install                                        |
+|      |            | 추가: restart-emacs                                             |
+|      |            | 옵션: --init-directory                                          |
+|      |            | 삭제: linum-mode (elisp로 작성된거라 느림)                      |
+| 28.1 | 2022-04-04 |                                                                 |
+|      |            | 추가: use-short-answers                                         |
+| 27.1 | 2020-08-10 |                                                                 |
+|      |            | 기본 활성화: 렉시컬 바인딩                                      |
+|      |            | 이름변경: cl =>  cl-lib                                         |
+|      |            | 추가: early-init.el                                             |
+|      |            | 추가: bidi-inhibit-bpa                                          |
+|      |            | 추가: fido-mode                                                 |
+| 26.1 | 2018-05-28 |                                                                 |
+|      |            | 추가: display-line-numbers-mode / (속도향상위해 c언어로 작성됨) |
+|      |            | 추가: read-answer-short                                         |
+| 24.5 | 2015-04-10 |                                                                 |
+| 24.4 | 2014-10-20 |                                                                 |
+|      |            | 삭제: iswitchb-mode                                             |
+|      |            | 추가: prettify-symbols-mode                                     |
+|      |            | 추가: icomplete-mode                                            |
+| 24.1 | 2012-06-10 |                                                                 |
+|      |            | 추가: package.el                                                |
+|      |            | 추가: electric-pair-mode                                        |
+|      |            | 추가: prog-mode                                                 |
+| 22.1 | 2007-06-02 |                                                                 |
+|      |            | 추가: ibuffer                                                   |
+|      |            | 추가: ido                                                       |
+|      |            | 추가: iswitchb-mode                                             |
+| 21.1 | 2001-10-28 |                                                                 |
+|      |            | 추가: global-hl-line-mode                                       |
 
 ## emacs-mirror
 
