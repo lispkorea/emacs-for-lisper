@@ -13,6 +13,8 @@
 $ mdbook serve
 ```
 
+- [mdbook-mermaid](https://github.com/badboy/mdbook-mermaid)도 있으나, 일단은 js를 직접 삽입하는 것으로 대체
+
 ## highlight.js
 
 - [홈페이지](https://highlightjs.org/)

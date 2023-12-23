@@ -1,49 +1,36 @@
 # init.el
 
-Emacs가 시작될 때, 초기화 파일을 로드합니다.
-
-| 파일명                  |                       |
-| ----------------------- | --------------------- |
-| ~/.emacs.el             | 안쓰는게 좋음.        |
-| ~/.emacs                | 안쓰는게 좋음.        |
-| ~/.emacs.d/init.el      | Windows, macOs에 추천 |
-| ~/.config/emacs/init.el | Linux에 추천          |
-
-- 변수 `user-emacs-directory`는 초기화 파일이 있는 폴더 명시합니다.
-  - ex) "~/.emacs.d/"
-
-Emacs는 다음과 같은 시작 옵션을 제공합니다.
-
-| emacs 옵션                    | 설명                               |
-| ----------------------------- | ---------------------------------- |
-| --no-init-file / -q           | 기본 초기화 파일을 로드하지 않음   |
-| --debug-init                  | 초기화 파일에 디버거를 활성화 시킴 |
-| --load 파일위치 / -l 파일위치 | 특정 파일을 로드함                 |
-| --no-window-system / -nw      | GUI를 사용하지 않음                |
-| --init-directory=폴더         | init 폴더를 지정한 곳으로 설정가능 |
-
-
-```bash
-# init폴더 영향 없이 다른 위치에 있는 elisp만 로드
-emacs --no-init-file --load ~/other/init.el
-
-# 다른 위치에 있는 init 폴더로 초기화 하며 이맥스를 켜고 싶다면.
-# --init-directory 옵션은 29.1 버전부터 지원
-emacs --init-directory=~/other_init_dir
-```
-
-- `.emacs.d/init.el`을 시작위치로, `.emacs.d/` 폴더를 github등을 이용해 버전관리해주면 좋습니다.
-- `.org`파일로 `.el`를 생성할 수 있는 점을 이용. 문서화와 코드를 동시에 관리하는 방법도 있습니다.
-  - 다만, 설정파일을 org로 다루는 것은 호불호가 갈리고, 무엇보다도 org를 다루기에는 너무나 방대합니다.
-  - 따라서, **여기서 Org는 다루지 않겠습니다**.
-
-## init.el
-
-설명하기 편하게 시작폴더를 `~/.emacs.d/`로 가정하겠습니다.
-
 - `~/.emacs.d/init.el`에는 다음과 같은 일을 할 것입니다.
+  - 초기 파일/폴더 관련 설정
   - `package.el`와 `use-package`를 이용해 패키지를 받을 저장소를 지정합니다.
   - `init-loader`를 이용해 초기화 파일을 관리합니다.
+
+## 초기 파일/폴더 관련 설정
+
+| elisp                  | 설명                                        |
+| ---------------------- | ------------------------------------------- |
+| custom-file            | 설정파일 경로                               |
+| user-emacs-directory   | 초기화 파일이 있는 폴더                     |
+| locate-user-emacs-file | `user-emacs-directory`기준 새로운 경로 반환 |
+| load                   | 파일을 로드합니다.                          |
+| make-backup-files      | 백업파일을 만듭니다.                        |
+| create-lockfiles       | lock파일을 만듭니다.                        |
+
+- `~.emacs.d/custom.el`과 같이 하드코딩하는 것은 좋지 않습니다(--init-directory 옵션을 사용할 경우를 대비).
+- locate-user-emacs-file 함수를 이용하면 `user-emacs-directory`기준으로 경로를 반환합니다.
+
+``` lisp
+(progn ;; `initial-file&directory'
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+  (setq custom-file (locate-user-emacs-file "custom.el"))
+  (load custom-file 'noerror)
+  ;; lock 파일 .#파일명
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Backup.html
+  (setq make-backup-files nil)
+  ;; backup 파일 파일명~
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Locks.html
+  (setq create-lockfiles nil))
+```
 
 ## package
 
@@ -98,12 +85,12 @@ emacs --init-directory=~/other_init_dir
     (defconst PACKAGE_TSINGHUA_MELPA_STABLE
       '("melpa-stable-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
 
+  ;;(setq-default package-user-dir DIR_ROOT_PACKAGE)
   (setq package-archives
-	`(,PACKAGE_TSINGHUA_GNU
-	  ,PACKAGE_TSINGHUA_NOGNU
-	  ,PACKAGE_TSINGHUA_MELPA
-	  ,PACKAGE_TSINGHUA_MELPA_STABLE
-          )))
+	(list PACKAGE_TSINGHUA_GNU
+	      PACKAGE_TSINGHUA_NOGNU
+	      PACKAGE_TSINGHUA_MELPA
+              )))
 ```
 
 ## init-loader
@@ -114,16 +101,19 @@ emacs --init-directory=~/other_init_dir
 | --------------------- | ----------------------- |
 | init-loader-directory | 초기화 파일이 있는 폴더 |
 
+- init-loader는 `init-loader-directory`에 있는 파일들을 순서대로 로드합니다.
+  - 여기서는 `inits/`폴더를 기준으로 로드하도록 하였습니다.
+
 ``` lisp
 (use-package init-loader
   :ensure t
   :init
-  (let* ((my-inits-dir (concat user-emacs-directory "inits")))
+  (let* ((my-inits-dir (locate-user-emacs-file "inits")))
     (unless (file-exists-p my-inits-dir)
       (make-directory my-inits-dir t))
-    (setq init-loader-directory my-inits-dir))
-  ;; (setq init-loader-byte-compile t)
-  (init-loader-load))
+    (setq init-loader-directory my-inits-dir)
+    ;; (setq init-loader-byte-compile t)
+    (init-loader-load)))
 ```
 
 ## 참고

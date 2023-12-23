@@ -12,9 +12,19 @@
 
 # ==Elisp
 
+- [모드](emacs/mode.md)
 - [elisp 설정](emacs/elisp.md)
-- [init.el](emacs/init.el.md)
-  - [0100_lisp-mode.el](emacs/inits/0100_lisp-mode.el.md)
+- [.emacs.d/](emacs/emacs.d/emacs.d.md)
+  - [.gitignore](emacs/emacs.d/gitignore.md)
+  - [init.el](emacs/emacs.d/init.el.md)
+  - [inits/](emacs/emacs.d/inits.md)
+    - [0000_define.el](emacs/emacs.d/inits/0000_define.el.md)
+    - [0010_base-setting.el](emacs/emacs.d/inits/0010_base-setting.el.md)
+    - [0011_macos.el](emacs/emacs.d/inits/0011_macos.el.md)
+    - [1000_visual.el](emacs/emacs.d/inits/1000_visual.el.md)
+    - [1001_navigation.el](emacs/emacs.d/inits/1001_navigation.el.md)
+    - [1002_editting.el](emacs/emacs.d/inits/1002_editting.el.md)
+    - [2000_emacs-lisp-mode.el](emacs/emacs.d/inits/2000_emacs-lisp-mode.el.md)
 
 # ==패키지
 
