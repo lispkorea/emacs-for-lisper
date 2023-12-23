@@ -29,7 +29,9 @@
   (setq make-backup-files nil)
   ;; backup 파일 파일명~
   ;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Locks.html
-  (setq create-lockfiles nil))
+  (setq create-lockfiles nil)
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Save-Control.html
+  (setq auto-save-default nil))
 ```
 
 ## package
@@ -87,10 +89,11 @@
 
   ;;(setq-default package-user-dir DIR_ROOT_PACKAGE)
   (setq package-archives
-	(list PACKAGE_TSINGHUA_GNU
-	      PACKAGE_TSINGHUA_NOGNU
-	      PACKAGE_TSINGHUA_MELPA
-              )))
+	(list
+         PACKAGE_ELPA_GNU
+         PACKAGE_ELPA_NOGNU
+         PACKAGE_MELPA
+         )))
 ```
 
 ## init-loader
