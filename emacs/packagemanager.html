@@ -181,7 +181,7 @@
                         <h1 id="패키지-관리자"><a class="header" href="#패키지-관리자">패키지 관리자</a></h1>
 <h2 id="패키지-설정"><a class="header" href="#패키지-설정">패키지 설정</a></h2>
 <ul>
-<li>package.el: Emacs 24.1(2012-06-10)</li>
+<li>package.el Emacs 24.1(2012-06-10)</li>
 <li>use-package: Emacs 29.1(2023-07-30)</li>
 <li><a href="https://github.com/dimitri/el-get">el-get</a>
 <ul>
@@ -197,6 +197,7 @@
 <li><a href="https://github.com/progfolio/elpaca">elpaca</a>
 <ul>
 <li>Elpaca는 심볼릭 링크가 필수</li>
+<li>git clone패키지를 설치하고 빌드, + 비동기식으로 처리.</li>
 </ul>
 </li>
 </ul>
@@ -214,9 +215,46 @@
 </div>
 <h3 id="use-package"><a class="header" href="#use-package">use-package</a></h3>
 <ul>
-<li><a href="https://github.com/jwiegley/use-package">저장소</a></li>
-<li><a href="https://jwiegley.github.io/use-package/keywords/">홈페이지</a></li>
+<li><a href="https://github.com/jwiegley/use-package">저장소</a>
+<ul>
+<li><a href="https://jwiegley.github.io/use-package/keywords/">키워드</a></li>
 </ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>:diminish</td><td>diminish.el // 모드 라인 표시 숨기기</td></tr>
+<tr><td>:delight</td><td>delight.el  // 모드 표시 설정</td></tr>
+<tr><td>:general</td><td><a href="https://github.com/noctuid/general.el">general.el</a> // 키 설정</td></tr>
+<tr><td><strong>:ensure</strong></td><td>패키지를 설치를 보장(t 혹은 다른 패키지 이름)</td></tr>
+<tr><td><strong>:pin</strong></td><td>저장소 키워드(gnu, nognu, elpa ...)</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>use-package-keywords</th><th>설명</th></tr></thead><tbody>
+<tr><td>:disabled</td><td>로드하지안음</td></tr>
+<tr><td>:load-path</td><td>해당 위치에서 패키지를 로드</td></tr>
+<tr><td>:requires</td><td>패키지를 로드</td></tr>
+<tr><td>:defines</td><td>더미 변수 선언(컴파일 워닝방지용)</td></tr>
+<tr><td>:functions</td><td>더미 함수 선언(컴파일 워닝방지용)</td></tr>
+<tr><td>:preface</td><td>조건부 분기 키워드를 동시에 사용하더라도 조건 분기보다 먼저 평가됩니다</td></tr>
+<tr><td>:if, :when, :unless</td><td>조건을 만족시켜야 패키지 로드</td></tr>
+<tr><td>:no-require</td><td>???</td></tr>
+<tr><td>:after</td><td>정의된 패키지가 로드 후, 현재 패키지 로드 시작</td></tr>
+<tr><td>:custom</td><td>사용자 정의 변수</td></tr>
+<tr><td>:custom-face</td><td>사용자 정의 변수(face)</td></tr>
+<tr><td>:bind, :bind*</td><td>키등록</td></tr>
+<tr><td>:bind-keymap, :bind-keymap*</td><td>키등록(키맵 전용)</td></tr>
+<tr><td>:interpreter</td><td>interpreter-mode-alist</td></tr>
+<tr><td>:mode</td><td>auto-mode-alist</td></tr>
+<tr><td>:magic, :magic-fallback</td><td>파일명이 정규표현식에 걸리면 수행</td></tr>
+<tr><td>:hook</td><td>add-hook 함수와 같은 기능</td></tr>
+<tr><td>:commands</td><td>interactive?</td></tr>
+<tr><td>:autoload</td><td>no-interactive</td></tr>
+<tr><td><strong>:init</strong></td><td>패키지가 <strong>로드되기 전</strong>에 평가됩니다</td></tr>
+<tr><td>:defer</td><td></td></tr>
+<tr><td>:demand</td><td>????</td></tr>
+<tr><td>=== 패키지 로드 ===</td><td>=== 패키지 로드 ===</td></tr>
+<tr><td><strong>:config</strong></td><td>해당 패키지가 <strong>로드된 후</strong>에 평가됩니다</td></tr>
+</tbody></table>
+</div>
 <h2 id="설정"><a class="header" href="#설정">설정</a></h2>
 <ul>
 <li><a href="https://github.com/emacs-jp/init-loader">init-loader</a></li>
