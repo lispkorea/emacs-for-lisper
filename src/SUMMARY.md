@@ -16,6 +16,7 @@
 - [elisp 설정](emacs/elisp.md)
 - [.emacs.d/](emacs/emacs.d/emacs.d.md)
   - [.gitignore](emacs/emacs.d/gitignore.md)
+  - [early-init.el](emacs/emacs.d/early-init.el.md)
   - [init.el](emacs/emacs.d/init.el.md)
   - [inits/](emacs/emacs.d/inits.md)
     - [0000_define.el](emacs/emacs.d/inits/0000_define.el.md)
