@@ -1,6 +1,7 @@
 # 도움받기
 
 - [커뮤니티 도움받기](https://lispkorea.github.io/help/)
+- <https://emacsdocs.org/>
 - <https://www.gnu.org/software/emacs/manual/>
 - <https://www.emacswiki.org/>
 - chatgpt

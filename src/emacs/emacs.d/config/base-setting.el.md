@@ -6,7 +6,7 @@
 - 예전에는 [(defalias 'yes-or-no-p 'y-or-n-p)](https://www.gnu.org/software/emacs/manual/html_node/elisp/Yes_002dor_002dNo-Queries.html) 이런식으로 했었다
 
 ``` lisp
-;; file: 0010_base-setting.el
+;; file: base-setting.el
 
 (progn ;; `설정::한글'
   ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html
@@ -22,4 +22,21 @@
 (progn ;; `설정::Y_혹은_N으로_대답'
   (setq read-answer-short t)
   (setq use-short-answers t))
+
+
+(progn ;; `설정::인덴트'
+  (setq-default indent-tabs-mode nil)
+  (setq tab-width 4))
+
+(use-package delsel
+  ;; ref: https://github.com/emacs-mirror/emacs/blob/master/lisp/delsel.el
+  :ensure nil
+  :config
+  (delete-selection-mode +1))
+
+(use-package whitespace
+  :ensure nil
+  :hook (before-save . whitespace-cleanup))
+
+
 ```

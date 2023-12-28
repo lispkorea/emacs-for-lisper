@@ -95,6 +95,52 @@
          )))
 ```
 
+## config-loader
+
+``` lisp
+(progn ;; `설정'
+  (thread-last
+    "config-loader.el"
+    (locate-user-emacs-file)
+    (file-truename)
+    (load-file))
+  (defconst CONFIG_DIR "config/")
+  (defconst CONFIG_LIST
+    '(
+;;; =========== `base-'
+      base-define.el
+      base-setting.el
+;;; =========== `os-'
+      os-windows.el
+      os-macos.el
+      os-linux.el
+;;; =========== `setting-'
+      setting-theme.el
+      setting-ui.el
+      setting-navigation.el
+      setting-editting.el
+      setting-font.el
+      setting-treemacs.el
+      setting-projectile.el
+;;; =========== `lang-' : language(programming)
+      lang-emacs-lisp.el
+      ;; lang-common-lisp-sly.el
+      lang-common-lisp-slime.el
+      lang-clojure-cider.el
+      lang-racket-racket-mode.el
+;;; =========== `file-' : file type
+      file-markdown.el
+      file-json.el
+;;; =========== `util-'
+      util-git.el
+      util-flymake.el
+      util-quickrun.el
+      util-command.el
+      ;; util-completion.el
+      ))
+  (config-loader:load-config CONFIG_DIR CONFIG_LIST))
+```
+
 ## ref
 
 - [emacs-jp/init-loader](https://github.com/emacs-jp/init-loader/)
