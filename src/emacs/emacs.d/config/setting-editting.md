@@ -1,4 +1,4 @@
-# 1002_editting.el
+# setting-editting.el
 
 ``` lisp
 ;; file: 1002_editting.el

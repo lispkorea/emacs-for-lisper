@@ -1,4 +1,4 @@
-# 0010_base-setting.el
+# base-setting.el
 
 ## 설정
 

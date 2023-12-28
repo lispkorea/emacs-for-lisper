@@ -3,7 +3,6 @@
 - `~/.emacs.d/init.el`에는 다음과 같은 일을 할 것입니다.
   - 초기 파일/폴더 관련 설정
   - `package.el`와 `use-package`를 이용해 패키지를 받을 저장소를 지정합니다.
-  - `init-loader`를 이용해 초기화 파일을 관리합니다.
 
 ## 초기 파일/폴더 관련 설정
 
@@ -89,37 +88,13 @@
 
   ;;(setq-default package-user-dir DIR_ROOT_PACKAGE)
   (setq package-archives
-	(list
+    (list
          PACKAGE_ELPA_GNU
          PACKAGE_ELPA_NOGNU
          PACKAGE_MELPA
          )))
 ```
 
-## init-loader
+## ref
 
 - [emacs-jp/init-loader](https://github.com/emacs-jp/init-loader/)
-
-| elisp                 | 설명                    |
-| --------------------- | ----------------------- |
-| init-loader-directory | 초기화 파일이 있는 폴더 |
-
-- init-loader는 `init-loader-directory`에 있는 파일들을 순서대로 로드합니다.
-  - 여기서는 `inits/`폴더를 기준으로 로드하도록 하였습니다.
-
-``` lisp
-(use-package init-loader
-  :ensure t
-  :init
-  (let* ((my-inits-dir (locate-user-emacs-file "inits")))
-    (unless (file-exists-p my-inits-dir)
-      (make-directory my-inits-dir t))
-    (setq init-loader-directory my-inits-dir)
-    ;; (setq init-loader-byte-compile t)
-    (init-loader-load)))
-```
-
-## 참고
-
-- [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
-- [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)

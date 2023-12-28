@@ -1,4 +1,4 @@
-# 1000_visual.el
+# setting-ui
 
 ``` lisp
 ;; file: 1000_visual.el

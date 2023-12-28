@@ -1,4 +1,4 @@
-# inits/2000_emacs-lisp-mode.el
+# lang-emacs-lisp.el
 
 - lisp-mode
 - imenu
