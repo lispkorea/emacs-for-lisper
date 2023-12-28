@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>0000_define.el - 리스퍼를 위한 이맥스</title>
+        <title>base-setting.el - 리스퍼를 위한 이맥스</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../../../faq.html">자주 뭍는 질문</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../../../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../../../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../../../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../../../emacs/mode.html">모드</a></li><li class="chapter-item expanded "><a href="../../../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/emacs.d.html">.emacs.d/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/gitignore.html">.gitignore</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits.html">inits/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0000_define.el.html" class="active">0000_define.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0010_base-setting.el.html">0010_base-setting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/0011_macos.el.html">0011_macos.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1000_visual.el.html">1000_visual.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1001_navigation.el.html">1001_navigation.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/1002_editting.el.html">1002_editting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/inits/2000_emacs-lisp-mode.el.html">2000_emacs-lisp-mode.el</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../../../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../../../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../../../commonlisp/sly.html">Sly</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../../../racket/Racket.html">Racket 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../racket/racket-mode.html">racket-mode</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../../../clojure/Clojure.html">Clojure 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../clojure/cider.html">cider</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../../../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../../misc/contributors.html">기여자</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../Index.html">처음</a></li><li class="chapter-item expanded affix "><a href="../../../Overview.html">둘러보기</a></li><li class="chapter-item expanded affix "><a href="../../../help.html">도움받기</a></li><li class="chapter-item expanded affix "><li class="part-title">==Emacs</li><li class="chapter-item expanded "><a href="../../../emacs/install.html">Emacs 설치</a></li><li class="chapter-item expanded "><a href="../../../emacs/version.html">버전</a></li><li class="chapter-item expanded "><a href="../../../emacs/basic.html">기본 조작법</a></li><li class="chapter-item expanded affix "><li class="part-title">==Elisp</li><li class="chapter-item expanded "><a href="../../../emacs/elisp.html">elisp 설정</a></li><li class="chapter-item expanded "><a href="../../../emacs/mode.html">모드</a></li><li class="chapter-item expanded affix "><li class="part-title">== emacs.d</li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/emacs.d.html">.emacs.d/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/gitignore.html">.gitignore</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/early-init.el.html">early-init.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/init.el.html">init.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config-loader.el.html">config-loader.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config.html">config/</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/base-define.el.html">base-define.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/base-setting.el.html" class="active">base-setting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/os-windows.el.html">os-windows.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/os-macos.el.html">os-macos.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/os-linux.el.html">os-linux.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-ui.html">setting-ui.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-navigation.el.html">setting-navigation.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-editting.el.html">setting-editting.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-font.el.html">setting-font.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-theme.el.html">setting-theme.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/setting-treemacs.el.html">setting-treemacs.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/lang-emacs-lisp.el.html">lang-emacs-lisp.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/file-json.el.html">lang-emacs-lisp.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/lang-emacs-lisp.el.html">file-json.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/file-markdown.el.html">file-markdown.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/util-command.el.html">util-command.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/util-git.el.html">util-git.el</a></li><li class="chapter-item expanded "><a href="../../../emacs/emacs.d/config/util-quickrun.el.html">util-quickrun.el</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">==패키지</li><li class="chapter-item expanded "><a href="../../../emacs/packagemanager.html">패키지 매니져</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/Package.html">다양한 패키지</a></li><li class="chapter-item expanded "><a href="../../../emacs/package/theme.html">색상 테마</a></li><li class="chapter-item expanded affix "><li class="part-title">==Common Lisp</li><li class="chapter-item expanded "><a href="../../../commonlisp/CommonLisp.html">Common Lisp 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../commonlisp/slime.html">Slime</a></li><li class="chapter-item expanded "><a href="../../../commonlisp/sly.html">Sly</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Racket</li><li class="chapter-item expanded "><a href="../../../racket/Racket.html">Racket 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../racket/racket-mode.html">racket-mode</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Clojure</li><li class="chapter-item expanded "><a href="../../../clojure/Clojure.html">Clojure 설정</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../clojure/cider.html">cider</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">==Etc</li><li class="chapter-item expanded "><a href="../../../etc/reading.html">읽어볼거리</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../../misc/contributors.html">기여자</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -149,7 +149,7 @@
                         <a href="https://github.com/lispkorea/emacs-for-lisper" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/emacs.d/inits/0000_define.el.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/lispkorea/emacs-for-lisper/edit/main/src/emacs/emacs.d/config/base-setting.el.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -178,48 +178,39 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="0000_defineel"><a class="header" href="#0000_defineel">0000_define.el</a></h1>
-<pre><code class="language-lisp">;; file: 0000_define.el
+                        <h1 id="base-settingel"><a class="header" href="#base-settingel">base-setting.el</a></h1>
+<h2 id="설정"><a class="header" href="#설정">설정</a></h2>
+<ul>
+<li>예전에는 <code>file-name-coding-system</code>, <code>set-terminal-coding-system</code>, <code>set-keyboard-coding-system</code> 등등 했었은데 이제는 <code>set-default-coding-systems</code> 하나로 끝낸다.</li>
+<li>예전에는 <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Yes_002dor_002dNo-Queries.html">(defalias 'yes-or-no-p 'y-or-n-p)</a> 이런식으로 했었다</li>
+</ul>
+<pre><code class="language-lisp">;; file: 0010_base-setting.el
 
-(defconst true t)
-(defconst false nil)
+(progn ;; `설정::한글'
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html
+  (set-language-environment &quot;Korean&quot;))
 
-(defconst IS_WINDOWS (eq system-type 'windows-nt))
-(defconst IS_MAC (eq system-type 'darwin))
+(progn ;; `설정::utf-8'
+  ;; utf-8 설정
+  ;; ref: https://www.masteringemacs.org/article/working-coding-systems-unicode-emacs
+  ;; ref: https://www.gnu.org/software/emacs/manual/html_node/elisp/Default-Coding-Systems.html
+  (set-default-coding-systems 'utf-8)
+  (prefer-coding-system 'utf-8))
 
-(defconst MODE_ON +1)
-(defconst MODE_OFF -1)
-
-(defmacro -&gt; (&amp;rest body)
-  (let ((result (pop body)))
-    (dolist (form body result)
-      (setq result
-	    (append (list (car form) result)
-                    (cdr form))))))
-
-(defmacro -&gt;&gt; (&amp;rest body)
-  (let ((result (pop body)))
-    (dolist (form body result)
-      (setq result
-	    (append form (list result))))))
-
-(defmacro comment (&amp;rest body)
-  nil)
-
-(defmacro do (&amp;rest body)
-  `(progn
-     ,@body))
+(progn ;; `설정::Y_혹은_N으로_대답'
+  (setq read-answer-short t)
+  (setq use-short-answers t))
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../../emacs/emacs.d/inits.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../../emacs/emacs.d/config/base-define.el.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../../emacs/emacs.d/inits/0010_base-setting.el.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../../emacs/emacs.d/config/os-windows.el.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -229,11 +220,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../../emacs/emacs.d/inits.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../../emacs/emacs.d/config/base-define.el.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../../emacs/emacs.d/inits/0010_base-setting.el.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../../emacs/emacs.d/config/os-windows.el.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
