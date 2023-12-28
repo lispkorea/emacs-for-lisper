@@ -36,3 +36,51 @@ CIDER(`C`lojure(Script) `I`nteractive `D`evelopment `E`nvironment that `R`ocks!)
 |            | C-c C-t C-r     | 테스트(실패한 테스트만) | cider-test-rerun-failed-tests |
 | 멈추었을시 |                 |                         |                               |
 |            | C-c C-b         | 인터럽트 시그날         | cider-interrupt               |
+
+## 설정
+
+``` lisp
+(use-package clojure-mode
+  :ensure t
+  :requires cider
+  :config
+  (add-hook 'clojure-mode-hook 'subword-mode)
+  (add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
+
+  ;; (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+  (define-clojure-indent
+   (implement '(1 (1)))
+   (letfn     '(1 ((:defn)) nil))
+   (proxy     '(2 nil nil (1)))
+   (reify     '(:defn (1)))
+   (deftype   '(2 nil nil (1)))
+   (defrecord '(2 nil nil (1)))
+   (specify   '(1 (1)))
+   (specify   '(1 (1)))
+   ;;
+   (fn-traced '(1 (1))))
+
+  (define-key clojure-mode-map (kbd "C-;") 'mark-sexp)
+  (customize-set-variable 'clojure-align-forms-automatically t)
+
+  ;; eye-candy
+  (add-to-list 'auto-coding-alist '("\\.clj\\'" . utf-8))
+  (add-to-list 'auto-coding-alist '("\\.cljs\\'" . utf-8))
+  (add-to-list 'auto-coding-alist '("\\.cljx\\'" . utf-8))
+
+  (font-lock-add-keywords
+   'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
+                    (0 (progn (compose-region (match-beginning 1)
+                                              (match-end 1) "λ")
+                              nil)))))
+  (font-lock-add-keywords
+   'clojure-mode `(("\\(#\\)("
+                    (0 (progn (compose-region (match-beginning 1)
+                                              (match-end 1) "ƒ")
+                              nil)))))
+  (font-lock-add-keywords
+   'clojure-mode `(("\\(#\\){"
+                    (0 (progn (compose-region (match-beginning 1)
+                                              (match-end 1) "∈")
+                              nil))))))
+```

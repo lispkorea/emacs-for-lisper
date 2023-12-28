@@ -13,18 +13,16 @@
 | repl 접속     | C-c C-c | racket-run-module-at-point |
 | 폼(form) 평가 | C-M-x   | racket-send-definition     |
 
+## 설정
+
 ``` lisp
-;; file: 2003_lang-racket.el
-
-
-;; ref: https://github.com/greghendershott/racket-mode
 ;; ref: https://racket-mode.com/
 ;; command: https://racket-mode.com/#Commands
 
 ;; C-M-i        complete-symbol
-;; C-c C-k	racket-run-module-at-point
-;; C-c C-c	racket-run-module-at-point
-;; C-M-x	racket-send-definition
+;; C-c C-k      racket-run-module-at-point
+;; C-c C-c      racket-run-module-at-point
+;; C-M-x        racket-send-definition
 (use-package racket-mode
   :ensure t
   :config
