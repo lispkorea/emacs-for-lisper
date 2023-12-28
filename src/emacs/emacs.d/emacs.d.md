@@ -2,14 +2,17 @@
 
 - [이곳](https://github.com/lispkorea/template-emacs.d)에서 미리 설정한 `.emacs.d/` 템플릿을 받을 수 있습니다.
 
-Emacs가 시작될 때, 초기화 파일을 로드합니다.
+- Emacs가 시작될 때, 초기화 파일을 로드합니다.
+  - `early-init.el` 로드 (Emacs 27.1 이상)
+  - Emacs GUI 로드
+  - `init.el` 로드
 
-| 파일명                  |                       |
-| ----------------------- | --------------------- |
-| ~/.emacs.el             | 안쓰는게 좋음.        |
-| ~/.emacs                | 안쓰는게 좋음.        |
-| ~/.emacs.d/init.el      | Windows, macOs에 추천 |
-| ~/.config/emacs/init.el | Linux에 추천          |
+| 파일명                   |                                        |
+| ------------------------ | -------------------------------------- |
+| ~/.emacs.el              | 안쓰는게 좋음.                         |
+| ~/.emacs                 | 안쓰는게 좋음.                         |
+| ~/.emacs.d/init.el       | Windows, macOs에 추천                  |
+| ~/.config/emacs/init.el  | Linux에 추천                           |
 
 - 변수 `user-emacs-directory`는 초기화 파일이 있는 폴더 명시합니다.
   - ex) "~/.emacs.d/"
@@ -39,9 +42,8 @@ emacs --init-directory=~/other_init_dir
   - 다만, 설정파일을 org로 다루는 것은 호불호가 갈리고, 무엇보다도 org를 다루기에는 너무나 방대합니다.
   - 따라서, **여기서 Org는 다루지 않겠습니다**.
 
-## emacs.d
+## 참고
 
-설명하기 편하게 시작폴더를 `~/.emacs.d/`로 가정하겠습니다.
-
-- `~/.emacs.d/.gitignore`를 만들어 줍니다.
-  - [Emacs.gitignore](https://github.com/github/gitignore/blob/main/Global/Emacs.gitignore)를 다운로드 받아서 `~/.emacs.d/.gitignore`에 저장합니다.
+- [emacs: Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)
+- [emacs: Find-Init.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html)
+- [emacs: Early-Init-File.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html)
