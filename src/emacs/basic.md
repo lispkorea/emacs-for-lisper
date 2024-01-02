@@ -1,5 +1,9 @@
 # 기본 조작법
 
+- [GNU Emacs Manual 한글 번역본](https://trans.onionmixer.net/mediawiki/index.php?title=GNUEMACS_Manual)
+  - 위 문서도 참고해 보세요. 번역과 같이 엄청난 노고를 들이신 분들께 감사드립니다.
+
+
 **`Ctrl-G`** 중요합니다.
 
 | 키       | 기호                       |

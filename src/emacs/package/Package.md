@@ -21,6 +21,8 @@
     - [nerd-icons-completion](https://github.com/rainstormstudio/nerd-icons-completion)
     - [nerd-icons-corfu](https://github.com/LuigiPiucco/nerd-icons-corfu)
 
+https://github.com/rolandwalker/simpleclip
+
 
 https://blog.shiren.dev/2017-11-13-%EC%9D%B4%EB%A7%A5%EC%8A%A4%EC%99%80-%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD/
 
