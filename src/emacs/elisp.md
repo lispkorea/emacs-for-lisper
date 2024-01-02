@@ -63,3 +63,23 @@ nil
 > (memq 2 '(1 2 3))
 (2 3)
 ```
+
+eq
+eql
+equal
+
+set
+setq
+
+defvar
+defconst
+
+memq
+meml
+member
+
+## 참고
+
+- [ElispCheatSheet](https://github.com/alhassy/ElispCheatSheet)
+- <https://tuhdo.github.io/emacs-for-proglang.html>
+- <https://tuhdo.github.io/helm-intro.html>

@@ -14,29 +14,45 @@
 | 상하좌우 | <up>/<down>/<left>/<right> |
 | 마우스   | <mouse-1>                  |
 
+
+| X (eXtend) command. |                                                 |
+| ------------------- | ----------------------------------------------- |
+| C-x                 | Character eXtend.  Followed by one character.   |
+| M-x                 | Named command eXtend.  Followed by a long name. |
+
 ## 필수 조작법
 
-| 필수               | 단축키     |
-| ------------------ | ---------- |
-| **중단**           | `C-g`      |
-| 파일 열기          | C-x C-f    |
-| 저장하기           | C-x C-s    |
-| 저장하기(다른이름) | C-x C-w    |
-| 종료               | C-x C-c    |
-| 명령어 실행        | M-x 명령어 |
+| 필수               | 단축키     |                            |
+| ------------------ | ---------- | -------------------------- |
+| **중단**           | `C-g`      |                            |
+| 파일 열기          | C-x C-f    | find-file                  |
+| 저장하기           | C-x C-s    | save-buffer                |
+| 저장하기(다른이름) | C-x C-w    | write-file                 |
+| 종료               | C-x C-c    | save-buffers-kill-terminal |
+| 명령어 실행        | M-x 명령어 |                            |
 
 
 ## 이동
 
-| C-이동                 | 단축키 | M-이동           | 단축키       |
-| ---------------------- | ------ | ---------------- | ------------ |
-| 문자 앞(forward)       | C-f    | 단어 앞(forward) | M-f          |
-| 문자 뒤(back)          | C-b    | 단어 뒤(back)    | M-b          |
-| 라인 위(previous-line) | C-p    |                  |              |
-| 라인 아래(next-line)   | C-n    |                  |              |
-| 라인 앞                | C-a    | 문단 앞          | M-a          |
-| 라인 뒤                | C-e    | 문단 뒤          | M-e          |
-|                        |        | 라인으로 이동    | M-g M-g 라인 |
+| C-이동                 | 단축키 |                   |
+| ---------------------- | ------ | ----------------- |
+| 문자 앞(forward)       | C-f    | `f`orward-char    |
+| 문자 뒤(back)          | C-b    | `b`ackward-char   |
+| 라인 위(previous-line) | C-p    | `p`revious-line   |
+| 라인 아래(next-line)   | C-n    | `n`ext-line       |
+| 라인 앞                | C-a    | beginning-of-line |
+| 라인 뒤                | C-e    | end-of-line       |
+
+| M-이동           | 단축키       |                   |
+| ---------------- | ------------ | ----------------- |
+| 단어 앞(forward) | M-f          | forward-word      |
+| 단어 뒤(back)    | M-b          | backward-word     |
+|                  |              |                   |
+|                  |              |                   |
+| 문단 앞          | M-a          | backward-sentence |
+| 문단 뒤          | M-e          | forward-sentence  |
+| 라인으로 이동    | M-g M-g 라인 |                   |
+
 
 [![emacs-movement.png](../res/emacs-movement.png)](../res/emacs-movement.png)
 - [출처](https://punchcard.wordpress.com/2010/10/09/emacs-movement-shortcuts-wallpaper/)
@@ -119,12 +135,12 @@
 
 ### 버퍼
 
-| **버퍼**       | 단축키  |
-| -------------- | ------- |
-| 목록           | C-x C-b |
-| 이동           | C-x b   |
-| 삭제           | C-x k   |
-| 읽기전용(토클) | C-x C-q |
+| **버퍼**       | 단축키  |                |
+| -------------- | ------- | -------------- |
+| 목록           | C-x C-b |                |
+| 이동           | C-x b   |                |
+| 삭제           | C-x k   |                |
+| 읽기전용(토클) | C-x C-q | read-only-mode |
 
 ### 윈도우
 

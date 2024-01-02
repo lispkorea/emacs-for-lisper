@@ -4,17 +4,23 @@ SLIME(`S`uperior `L`isp `I`nteraction `M`ode for `E`macs)
 
 - [홈페이지](https://slime.common-lisp.dev/)
 - [저장소](https://github.com/slime/slime)
+- ref: <https://lisp-journey.gitlab.io/blog/slime-tips/>
 
-| 분류 | 단축키  | 내용                   | 함수                                     |
-| ---- | ------- | ---------------------- | ---------------------------------------- |
-| 평가 |         |                        |                                          |
-|      | C-M-x   | 현재 폼 평가           | slime-eval-defun                         |
-|      | C-c C-l | 파일 로드              | slime-load-file                          |
-|      | C-c ~   | REPL 네임스페이스 설정 | slime-sync-package-and-default-directory |
-| 이동 |         |                        |                                          |
-|      | M-.     | 정의로 이동            | slime-edit-definition                    |
-|      | M-,     | 되돌아가기             | slime-pop-find-definition-stack          |
-|      | C-c C-z | REPL로 이동            | slime-repl                               |
+| 분류 | 단축키      | 내용                   | 함수                                     |
+| ---- | ----------- | ---------------------- | ---------------------------------------- |
+| 평가 |             |                        |                                          |
+|      | C-M-x       | 현재 폼 평가           | slime-eval-defun                         |
+|      | C-c C-l     | 파일 로드              | slime-load-file                          |
+|      | C-c ~       | REPL 네임스페이스 설정 | slime-sync-package-and-default-directory |
+| 이동 |             |                        |                                          |
+|      | M-.         | 정의로 이동            | slime-edit-definition                    |
+|      | M-,         | 되돌아가기             | slime-pop-find-definition-stack          |
+|      | C-c C-z     | REPL로 이동            | slime-repl                               |
+| 기타 |             |                        |                                          |
+|      | C-M-i       | 자동완성               |                                          |
+|      | M-*         |                        |                                          |
+|      | C-c C-d C-d | describe symbol        |                                          |
+|      | C-c M-o     | REPL 깨끗이하기        |                                          |
 
 ## 설정
 

@@ -7,12 +7,12 @@
   - Emacs GUI 로드
   - `init.el` 로드
 
-| 파일명                   |                                        |
-| ------------------------ | -------------------------------------- |
-| ~/.emacs.el              | 안쓰는게 좋음.                         |
-| ~/.emacs                 | 안쓰는게 좋음.                         |
-| ~/.emacs.d/init.el       | Windows, macOs에 추천                  |
-| ~/.config/emacs/init.el  | Linux에 추천                           |
+| 파일명                  |                       |
+| ----------------------- | --------------------- |
+| ~/.emacs.el             | 안쓰는게 좋음.        |
+| ~/.emacs                | 안쓰는게 좋음.        |
+| ~/.emacs.d/init.el      | Windows, macOs에 추천 |
+| ~/.config/emacs/init.el | Linux에 추천          |
 
 - 변수 `user-emacs-directory`는 초기화 파일이 있는 폴더 명시합니다.
   - ex) "~/.emacs.d/"
@@ -26,7 +26,7 @@ Emacs는 다음과 같은 시작 옵션을 제공합니다.
 | --load 파일위치 / -l 파일위치 | 특정 파일을 로드함                 |
 | --no-window-system / -nw      | GUI를 사용하지 않음                |
 | --init-directory=폴더         | init 폴더를 지정한 곳으로 설정가능 |
-
+| --quick / -Q                  | "-q --no-site-file --no-splash"    |
 
 ```bash
 # init폴더 영향 없이 다른 위치에 있는 elisp만 로드

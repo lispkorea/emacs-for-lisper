@@ -4,18 +4,25 @@
 [둘러보기](Overview.md)
 [도움받기](help.md)
 
-# ==Emacs
+------
 
+# Emacs
+
+- [간단한 역사](emacs/history.md)
 - [Emacs 설치](emacs/install.md)
 - [버전](emacs/version.md)
 - [기본 조작법](emacs/basic.md)
 
-# ==Elisp
+------
+
+# Elisp
 
 - [elisp 설정](emacs/elisp.md)
 - [모드](emacs/mode.md)
 
-# == emacs.d
+------
+
+# emacs.d
 
 - [.emacs.d/](emacs/emacs.d/emacs.d.md)
   - [.gitignore](emacs/emacs.d/gitignore.md)
@@ -41,30 +48,39 @@
     - [util-git.el](emacs/emacs.d/config/util-git.el.md)
     - [util-quickrun.el](emacs/emacs.d/config/util-quickrun.el.md)
 
-# ==패키지
+------
+
+# 패키지
 
 - [패키지 매니져](emacs/packagemanager.md)
 - [다양한 패키지](emacs/package/Package.md)
 - [색상 테마](emacs/package/theme.md)
 
+------
 
-# ==Common Lisp
+# Common Lisp
 
 - [Common Lisp 설정](commonlisp/CommonLisp.md)
   - [Slime](commonlisp/slime.md)
   - [Sly](commonlisp/sly.md)
 
-# ==Racket
+------
+
+# Racket
 
 - [Racket 설정](racket/Racket.md)
   - [racket-mode](racket/racket-mode.md)
 
-# ==Clojure
+------
+
+# Clojure
 
 - [Clojure 설정](clojure/Clojure.md)
   - [cider](clojure/cider.md)
 
-# ==Etc
+------
+
+# Etc
 
 - [읽어볼거리](etc/reading.md)
 

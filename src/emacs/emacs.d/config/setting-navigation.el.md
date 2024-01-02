@@ -47,3 +47,6 @@
   (amx-mode))
 
 ```
+
+- <https://github.com/purcell/ibuffer-vc>
+- <https://github.com/purcell/ibuffer-projectile>
