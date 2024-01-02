@@ -2210,11 +2210,37 @@ rtags https://github.com/Andersbakken/rtags</p>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="slime"><a class="header" href="#slime">Slime</a></h1>
 <p>SLIME(<code>S</code>uperior <code>L</code>isp <code>I</code>nteraction <code>M</code>ode for <code>E</code>macs)</p>
+<p><img src="commonlisp/../res/slime.png" alt="" /></p>
 <ul>
 <li><a href="https://slime.common-lisp.dev/">홈페이지</a></li>
 <li><a href="https://github.com/slime/slime">저장소</a></li>
 <li>ref: <a href="https://lisp-journey.gitlab.io/blog/slime-tips/">https://lisp-journey.gitlab.io/blog/slime-tips/</a></li>
 </ul>
+<ul>
+<li>역사
+<ul>
+<li>Eric Marsden : SLIM을 만듬(2003. 중반쯤)</li>
+<li>Luke Gorrie, Helmut Eller : 이를 확장시킴.</li>
+<li>SLIME ( Extension of SLIM )</li>
+<li>Superior Lisp Interaction Mode for Emacs</li>
+</ul>
+</li>
+<li>기능
+<ul>
+<li>Slime-mode</li>
+<li>SLDB : debugger 인터페이스</li>
+<li>REPL기능 강화</li>
+<li>자동완성기능 제공</li>
+<li>Inspector기능</li>
+</ul>
+</li>
+</ul>
+<h2 id="slime역활"><a class="header" href="#slime역활">slime역활</a></h2>
+<ul>
+<li>에디터상의 코딩환경을 만들어 주고, Lisp 구현체와 데이터를 주고받을 수 있는 서버 제공</li>
+<li>에디터 &gt;&gt; <code>에디터 확장 -&gt; Swank</code>  &gt;&gt; Lisp 구현체</li>
+</ul>
+<p><img src="commonlisp/../res/slime-architecture.jpg" alt="" /></p>
 <div class="table-wrapper"><table><thead><tr><th>분류</th><th>단축키</th><th>내용</th><th>함수</th></tr></thead><tbody>
 <tr><td>평가</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>C-M-x</td><td>현재 폼 평가</td><td>slime-eval-defun</td></tr>
@@ -2229,6 +2255,13 @@ rtags https://github.com/Andersbakken/rtags</p>
 <tr><td></td><td>M-*</td><td></td><td></td></tr>
 <tr><td></td><td>C-c C-d C-d</td><td>describe symbol</td><td></td></tr>
 <tr><td></td><td>C-c M-o</td><td>REPL 깨끗이하기</td><td></td></tr>
+<tr><td></td><td>C-cm</td><td></td><td>macro expand</td></tr>
+<tr><td></td><td>C-cdd</td><td></td><td>describe symbol</td></tr>
+<tr><td></td><td>C-cd  h</td><td></td><td>hyperspec</td></tr>
+<tr><td>디버깅</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>a</td><td></td><td>Abort</td></tr>
+<tr><td></td><td>q</td><td></td><td>Quit</td></tr>
+<tr><td></td><td>n</td><td></td><td>contiNue</td></tr>
 </tbody></table>
 </div>
 <h2 id="설정-2"><a class="header" href="#설정-2">설정</a></h2>
